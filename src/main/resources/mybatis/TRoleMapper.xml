@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.TRoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.boot.store.entity.TRole">
+        <id column="uid" property="uid" />
+        <result column="role_name" property="roleName" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+        <result column="summary" property="summary" />
+        <result column="category_menu_uids" property="categoryMenuUids" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, role_name, create_time, update_time, status, summary, category_menu_uids
+    </sql>
+
+    <select id="getNameByUserIdList" resultType="com.boot.store.dto.system.RoleNameDto">
+        SELECT
+            tur.user_id as userId,
+            tr.role_name as roleName
+        from
+            t_user_role tur
+        left join t_user tu on tur.user_id = tu.uid
+        left join t_role tr on tur.role_id = tr.uid
+        WHERE 1=1
+        <if test="uidLists != null and uidLists.size() > 0">
+            AND tur.user_id IN
+            <foreach collection="uidLists" index="index" item="uid" open="(" separator="," close=")">
+                #{uid}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>

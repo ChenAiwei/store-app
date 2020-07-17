@@ -1,0 +1,604 @@
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:16.919 INFO 49884 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 49884 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:16.939 INFO 49884 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.282 INFO 49884 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.522 INFO 49884 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.522 INFO 49884 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.522 INFO 49884 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.522 INFO 49884 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.612 INFO 49884 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.621 INFO 49884 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1542 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.902 INFO 49884 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:18.902 INFO 49884 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.132 INFO 49884 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.642 INFO 49884 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.831 INFO 49884 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.881 INFO 49884 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.901 INFO 49884 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:19.901 INFO 49884 [main] com.boot.store.StartApp Started StartApp in 3.865 seconds (JVM running for 6.881)
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:22.683 INFO 49884 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:22.693 INFO 49884 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 09:24:22.693 INFO 49884 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 0 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:14.645 INFO 11904 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 11904 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:14.649 INFO 11904 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:16.478 INFO 11904 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:16.871 INFO 11904 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:16.881 INFO 11904 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:16.882 INFO 11904 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:16.883 INFO 11904 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:17.033 INFO 11904 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:17.034 INFO 11904 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2245 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:17.585 INFO 11904 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:17.588 INFO 11904 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:18.071 INFO 11904 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:18.944 INFO 11904 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:19.377 INFO 11904 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:19.556 INFO 11904 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:19.586 INFO 11904 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:19.596 INFO 11904 [main] com.boot.store.StartApp Started StartApp in 6.139 seconds (JVM running for 12.668)
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:24.745 INFO 11904 [RMI TCP Connection(4)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:24.745 INFO 11904 [RMI TCP Connection(4)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 10:58:24.759 INFO 11904 [RMI TCP Connection(4)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 14 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:40.306 INFO 31824 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 31824 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:40.306 INFO 31824 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.615 INFO 31824 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.866 INFO 31824 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.876 INFO 31824 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.876 INFO 31824 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.876 INFO 31824 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.965 INFO 31824 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:41.965 INFO 31824 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1549 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:42.255 INFO 31824 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:42.255 INFO 31824 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:42.485 INFO 31824 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:42.936 INFO 31824 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:43.125 INFO 31824 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:43.175 INFO 31824 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:43.205 INFO 31824 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:43.205 INFO 31824 [main] com.boot.store.StartApp Started StartApp in 3.935 seconds (JVM running for 7.144)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:44.838 INFO 31824 [RMI TCP Connection(1)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:44.838 INFO 31824 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:29:44.848 INFO 31824 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:48.943 INFO 51440 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 51440 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:48.953 INFO 51440 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.331 INFO 51440 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.571 INFO 51440 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.581 INFO 51440 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.591 INFO 51440 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.591 INFO 51440 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.681 INFO 51440 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.681 INFO 51440 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1589 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.971 INFO 51440 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:50.971 INFO 51440 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:51.211 INFO 51440 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:51.711 INFO 51440 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:51.911 INFO 51440 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:51.971 INFO 51440 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:51.991 INFO 51440 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:52.001 INFO 51440 [main] com.boot.store.StartApp Started StartApp in 4.123 seconds (JVM running for 6.999)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:55.242 INFO 51440 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:55.242 INFO 51440 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:37:55.252 INFO 51440 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:12.916 INFO 45396 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 45396 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:12.925 INFO 45396 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.238 INFO 45396 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.478 INFO 45396 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.488 INFO 45396 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.488 INFO 45396 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.488 INFO 45396 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.568 INFO 45396 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.568 INFO 45396 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1503 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.868 INFO 45396 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:14.868 INFO 45396 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.098 INFO 45396 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.538 INFO 45396 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.718 INFO 45396 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.778 INFO 45396 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.798 INFO 45396 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:15.798 INFO 45396 [main] com.boot.store.StartApp Started StartApp in 3.828 seconds (JVM running for 6.832)
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:17.532 INFO 45396 [RMI TCP Connection(1)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:17.532 INFO 45396 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 11:42:17.542 INFO 45396 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 9 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:04.189 INFO 19532 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 19532 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:04.199 INFO 19532 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:05.915 INFO 19532 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.244 INFO 19532 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.254 INFO 19532 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.254 INFO 19532 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.254 INFO 19532 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.374 INFO 19532 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.374 INFO 19532 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2015 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.775 INFO 19532 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:06.775 INFO 19532 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.035 INFO 19532 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.524 INFO 19532 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.784 INFO 19532 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.854 INFO 19532 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.884 INFO 19532 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:07.884 INFO 19532 [main] com.boot.store.StartApp Started StartApp in 4.765 seconds (JVM running for 7.889)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:11.240 INFO 19532 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:11.240 INFO 19532 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:08:11.250 INFO 19532 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:08.096 INFO 19976 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 19976 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:08.096 INFO 19976 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.434 INFO 19976 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.664 INFO 19976 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.674 INFO 19976 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.674 INFO 19976 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.674 INFO 19976 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.764 INFO 19976 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:09.764 INFO 19976 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1538 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.063 INFO 19976 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.063 INFO 19976 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.303 INFO 19976 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.754 INFO 19976 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.943 INFO 19976 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:10.993 INFO 19976 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:11.013 INFO 19976 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:11.013 INFO 19976 [main] com.boot.store.StartApp Started StartApp in 3.831 seconds (JVM running for 6.737)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:13.774 INFO 19976 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:13.774 INFO 19976 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:12:13.784 INFO 19976 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:49.223 INFO 42544 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 42544 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:49.223 INFO 42544 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.506 INFO 42544 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.746 INFO 42544 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.756 INFO 42544 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.756 INFO 42544 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.756 INFO 42544 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.847 INFO 42544 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:50.847 INFO 42544 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1514 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:51.137 INFO 42544 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:51.137 INFO 42544 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:51.367 INFO 42544 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:51.426 INFO 42544 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:51.817 INFO 42544 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:52.037 INFO 42544 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:52.087 INFO 42544 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:52.107 INFO 42544 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:52.107 INFO 42544 [main] com.boot.store.StartApp Started StartApp in 3.88 seconds (JVM running for 6.877)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:54.972 INFO 42544 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:54.972 INFO 42544 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:15:54.972 INFO 42544 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 0 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:44.831 INFO 23756 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 23756 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:44.831 INFO 23756 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.100 INFO 23756 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.319 INFO 23756 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.329 INFO 23756 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.329 INFO 23756 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.329 INFO 23756 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.419 INFO 23756 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.419 INFO 23756 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1478 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.710 INFO 23756 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.710 INFO 23756 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:46.950 INFO 23756 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.010 INFO 23756 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.399 INFO 23756 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.580 INFO 23756 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.630 INFO 23756 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.650 INFO 23756 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:47.650 INFO 23756 [main] com.boot.store.StartApp Started StartApp in 3.775 seconds (JVM running for 6.764)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:49.270 INFO 23756 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:49.270 INFO 23756 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:20:49.280 INFO 23756 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:46.851 INFO 35680 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 35680 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:46.856 INFO 35680 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.195 INFO 35680 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.436 INFO 35680 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.444 INFO 35680 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.445 INFO 35680 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.446 INFO 35680 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.533 INFO 35680 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.534 INFO 35680 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1563 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.835 INFO 35680 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:48.836 INFO 35680 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.071 INFO 35680 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.135 INFO 35680 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.600 INFO 35680 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.834 INFO 35680 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.900 INFO 35680 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.929 INFO 35680 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:49.932 INFO 35680 [main] com.boot.store.StartApp Started StartApp in 4.183 seconds (JVM running for 7.346)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:54.793 INFO 35680 [RMI TCP Connection(5)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:54.793 INFO 35680 [RMI TCP Connection(5)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:27:54.809 INFO 35680 [RMI TCP Connection(5)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 15 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:26.765 INFO 12808 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 12808 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:26.765 INFO 12808 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.075 INFO 12808 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.325 INFO 12808 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.335 INFO 12808 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.335 INFO 12808 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.335 INFO 12808 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.435 INFO 12808 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.435 INFO 12808 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1571 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.755 INFO 12808 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.765 INFO 12808 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:28.994 INFO 12808 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.054 INFO 12808 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.445 INFO 12808 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.625 INFO 12808 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.675 INFO 12808 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.705 INFO 12808 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:29.705 INFO 12808 [main] com.boot.store.StartApp Started StartApp in 4.04 seconds (JVM running for 6.995)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:32.602 INFO 12808 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:32.602 INFO 12808 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:32:32.612 INFO 12808 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:48.964 INFO 61392 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 61392 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:49.014 INFO 61392 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.246 INFO 61392 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.486 INFO 61392 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.486 INFO 61392 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.496 INFO 61392 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.496 INFO 61392 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.576 INFO 61392 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.576 INFO 61392 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1472 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.866 INFO 61392 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:50.866 INFO 61392 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.096 INFO 61392 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.166 INFO 61392 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.546 INFO 61392 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.725 INFO 61392 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.775 INFO 61392 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.805 INFO 61392 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:51.805 INFO 61392 [main] com.boot.store.StartApp Started StartApp in 3.845 seconds (JVM running for 6.709)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:53.253 INFO 61392 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:53.253 INFO 61392 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:41:53.263 INFO 61392 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:55.193 INFO 34492 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 34492 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:55.197 INFO 34492 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.585 INFO 34492 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.841 INFO 34492 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.850 INFO 34492 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.851 INFO 34492 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.851 INFO 34492 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.939 INFO 34492 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:56.940 INFO 34492 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1609 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:57.253 INFO 34492 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:57.254 INFO 34492 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:57.532 INFO 34492 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:57.597 INFO 34492 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:58.105 INFO 34492 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:58.341 INFO 34492 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:58.389 INFO 34492 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:58.410 INFO 34492 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 14:57:58.413 INFO 34492 [main] com.boot.store.StartApp Started StartApp in 4.132 seconds (JVM running for 8.945)
+[store:0.0.0.0:8889] [,] 2020-07-08 14:58:01.626 INFO 34492 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:58:01.626 INFO 34492 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 14:58:01.634 INFO 34492 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 7 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:56.502 INFO 17616 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 17616 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:56.502 INFO 17616 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:57.828 INFO 17616 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.058 INFO 17616 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.068 INFO 17616 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.068 INFO 17616 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.068 INFO 17616 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.158 INFO 17616 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.158 INFO 17616 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1546 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.449 INFO 17616 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.449 INFO 17616 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.679 INFO 17616 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:58.749 INFO 17616 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:59.129 INFO 17616 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:59.319 INFO 17616 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:59.369 INFO 17616 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:59.389 INFO 17616 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 15:12:59.389 INFO 17616 [main] com.boot.store.StartApp Started StartApp in 3.883 seconds (JVM running for 7.111)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:13:02.233 INFO 17616 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:13:02.233 INFO 17616 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:13:02.244 INFO 17616 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 11 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:43.153 INFO 16736 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 16736 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:43.163 INFO 16736 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:44.708 INFO 16736 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:44.963 INFO 16736 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:44.973 INFO 16736 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:44.973 INFO 16736 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:44.973 INFO 16736 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.063 INFO 16736 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.063 INFO 16736 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1789 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.363 INFO 16736 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.363 INFO 16736 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.602 INFO 16736 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:45.662 INFO 16736 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:46.072 INFO 16736 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:46.262 INFO 16736 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:46.312 INFO 16736 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:46.332 INFO 16736 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:46.332 INFO 16736 [main] com.boot.store.StartApp Started StartApp in 4.343 seconds (JVM running for 7.696)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:49.185 INFO 16736 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:49.185 INFO 16736 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:16:49.209 INFO 16736 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 24 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:06.288 INFO 71304 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 71304 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:06.294 INFO 71304 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:07.673 INFO 71304 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:07.907 INFO 71304 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:07.923 INFO 71304 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:07.924 INFO 71304 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:07.925 INFO 71304 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.016 INFO 71304 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.017 INFO 71304 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1586 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.325 INFO 71304 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.327 INFO 71304 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.567 INFO 71304 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:08.630 INFO 71304 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:09.029 INFO 71304 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:09.229 INFO 71304 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:09.281 INFO 71304 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:09.306 INFO 71304 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:09.309 INFO 71304 [main] com.boot.store.StartApp Started StartApp in 4.077 seconds (JVM running for 7.241)
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:12.205 INFO 71304 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:12.206 INFO 71304 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 15:21:12.215 INFO 71304 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 9 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:53.143 INFO 49568 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 49568 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:53.148 INFO 49568 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.134 INFO 49568 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.384 INFO 49568 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.394 INFO 49568 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.394 INFO 49568 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.394 INFO 49568 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.489 INFO 49568 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.490 INFO 49568 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2078 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.811 INFO 49568 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:55.813 INFO 49568 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:56.518 INFO 49568 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:56.690 INFO 49568 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:57.433 INFO 49568 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:57.723 INFO 49568 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:57.773 INFO 49568 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:57.805 INFO 49568 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 16:07:57.808 INFO 49568 [main] com.boot.store.StartApp Started StartApp in 6.059 seconds (JVM running for 9.692)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:08:01.075 INFO 49568 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:08:01.075 INFO 49568 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:08:01.088 INFO 49568 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 12 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:01.374 INFO 46436 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 46436 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:01.378 INFO 46436 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:02.699 INFO 46436 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:02.935 INFO 46436 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:02.946 INFO 46436 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:02.946 INFO 46436 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:02.947 INFO 46436 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.036 INFO 46436 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.037 INFO 46436 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1551 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.347 INFO 46436 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.349 INFO 46436 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.597 INFO 46436 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:03.659 INFO 46436 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:04.053 INFO 46436 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:04.241 INFO 46436 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:04.291 INFO 46436 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:04.316 INFO 46436 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:04.318 INFO 46436 [main] com.boot.store.StartApp Started StartApp in 3.945 seconds (JVM running for 7.022)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:07.099 INFO 46436 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:07.100 INFO 46436 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:10:07.110 INFO 46436 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:04.092 INFO 43528 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 43528 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:04.102 INFO 43528 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.053 INFO 43528 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.463 INFO 43528 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.473 INFO 43528 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.473 INFO 43528 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.473 INFO 43528 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.593 INFO 43528 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:06.593 INFO 43528 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2332 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:07.003 INFO 43528 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:07.003 INFO 43528 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:07.355 INFO 43528 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:07.455 INFO 43528 [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Adding welcome page: class path resource [pages/index.html]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:07.974 INFO 43528 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:08.264 INFO 43528 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:08.334 INFO 43528 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:08.394 INFO 43528 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:08.404 INFO 43528 [main] com.boot.store.StartApp Started StartApp in 5.374 seconds (JVM running for 10.018)
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:11.357 INFO 43528 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:11.358 INFO 43528 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 16:59:11.371 INFO 43528 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 12 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 17:05:23.867 INFO 43528 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:05:23.877 INFO 43528 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:47.216 INFO 28924 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 28924 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:47.216 INFO 28924 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:49.626 INFO 28924 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.166 INFO 28924 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.186 INFO 28924 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.186 INFO 28924 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.186 INFO 28924 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.366 INFO 28924 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.366 INFO 28924 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 3050 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.880 INFO 28924 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:50.890 INFO 28924 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:51.270 INFO 28924 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:51.986 INFO 28924 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:52.296 INFO 28924 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:52.396 INFO 28924 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:52.436 INFO 28924 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:52.446 INFO 28924 [main] com.boot.store.StartApp Started StartApp in 6.508 seconds (JVM running for 10.951)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:56.186 INFO 28924 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:56.186 INFO 28924 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:25:56.206 INFO 28924 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 20 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 17:28:45.060 INFO 28924 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:28:45.090 INFO 28924 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+[store:0.0.0.0:8889] [,] 2020-07-08 17:28:59.213 INFO 67064 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 67064 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:28:59.223 INFO 67064 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.347 INFO 67064 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.764 INFO 67064 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.784 INFO 67064 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.784 INFO 67064 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.784 INFO 67064 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.934 INFO 67064 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:01.934 INFO 67064 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2551 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:02.493 INFO 67064 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:02.493 INFO 67064 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:02.976 INFO 67064 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:03.876 INFO 67064 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:04.206 INFO 67064 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:04.276 INFO 67064 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:04.316 INFO 67064 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:04.316 INFO 67064 [main] com.boot.store.StartApp Started StartApp in 6.635 seconds (JVM running for 10.652)
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:06.407 INFO 67064 [RMI TCP Connection(1)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:06.408 INFO 67064 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:29:06.425 INFO 67064 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 17 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 17:30:36.360 INFO 67064 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 17:30:36.387 INFO 67064 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:55.880 INFO 36968 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 36968 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:55.979 INFO 36968 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:58.934 INFO 36968 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.596 INFO 36968 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.616 INFO 36968 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.619 INFO 36968 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.620 INFO 36968 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.908 INFO 36968 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 18:18:59.909 INFO 36968 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 3820 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:01.043 INFO 36968 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:01.046 INFO 36968 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:01.740 INFO 36968 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:02.802 INFO 36968 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:03.556 INFO 36968 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:03.666 INFO 36968 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:03.730 INFO 36968 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:03.739 INFO 36968 [main] com.boot.store.StartApp Started StartApp in 9.507 seconds (JVM running for 15.261)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:05.702 INFO 36968 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:05.703 INFO 36968 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:19:05.719 INFO 36968 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 16 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:22.294 INFO 36968 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:22.354 INFO 36968 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:36.871 INFO 42896 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 42896 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:36.881 INFO 42896 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:38.838 INFO 42896 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.198 INFO 42896 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.218 INFO 42896 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.218 INFO 42896 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.218 INFO 42896 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.338 INFO 42896 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.338 INFO 42896 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2297 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.940 INFO 42896 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:39.950 INFO 42896 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:40.500 INFO 42896 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:41.150 INFO 42896 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:41.520 INFO 42896 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:41.580 INFO 42896 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:41.620 INFO 42896 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:41.620 INFO 42896 [main] com.boot.store.StartApp Started StartApp in 6.017 seconds (JVM running for 11.016)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:45.220 INFO 42896 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:45.220 INFO 42896 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:23:45.250 INFO 42896 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:05.534 INFO 72316 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 72316 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:05.544 INFO 72316 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:07.731 INFO 72316 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.242 INFO 72316 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.262 INFO 72316 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.262 INFO 72316 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.262 INFO 72316 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.402 INFO 72316 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:08.402 INFO 72316 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2698 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:09.052 INFO 72316 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:09.052 INFO 72316 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:09.604 INFO 72316 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:10.525 INFO 72316 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:11.043 INFO 72316 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:11.123 INFO 72316 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:11.173 INFO 72316 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:11.173 INFO 72316 [main] com.boot.store.StartApp Started StartApp in 6.875 seconds (JVM running for 11.617)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:14.841 INFO 72316 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:14.841 INFO 72316 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:25:14.861 INFO 72316 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 20 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:28:53.998 INFO 72316 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:28:54.038 INFO 72316 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:17.562 INFO 46812 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 46812 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:17.562 INFO 46812 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:19.503 INFO 46812 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:19.863 INFO 46812 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:19.873 INFO 46812 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:19.873 INFO 46812 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:19.873 INFO 46812 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:20.019 INFO 46812 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:20.019 INFO 46812 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2317 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:20.522 INFO 46812 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:20.522 INFO 46812 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:21.042 INFO 46812 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:21.722 INFO 46812 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:22.292 INFO 46812 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:22.432 INFO 46812 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:22.542 INFO 46812 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:22.552 INFO 46812 [main] com.boot.store.StartApp Started StartApp in 6.48 seconds (JVM running for 10.367)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:25.656 INFO 46812 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:25.661 INFO 46812 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:30:25.676 INFO 46812 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 15 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:21.186 INFO 38584 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 38584 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:21.196 INFO 38584 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:22.766 INFO 38584 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.046 INFO 38584 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.056 INFO 38584 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.056 INFO 38584 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.056 INFO 38584 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.146 INFO 38584 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.146 INFO 38584 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1810 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.881 INFO 38584 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:23.885 INFO 38584 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:24.390 INFO 38584 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:25.036 INFO 38584 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:25.435 INFO 38584 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:25.505 INFO 38584 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:25.535 INFO 38584 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:25.535 INFO 38584 [main] com.boot.store.StartApp Started StartApp in 5.787 seconds (JVM running for 9.029)
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:27.595 INFO 38584 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:27.595 INFO 38584 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 18:58:27.605 INFO 38584 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:26.674 INFO 53264 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 53264 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:26.683 INFO 53264 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:28.998 INFO 53264 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.597 INFO 53264 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.607 INFO 53264 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.617 INFO 53264 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.617 INFO 53264 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.797 INFO 53264 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:29.797 INFO 53264 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2951 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:30.277 INFO 53264 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:30.277 INFO 53264 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:30.811 INFO 53264 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:31.494 INFO 53264 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:31.864 INFO 53264 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:31.981 INFO 53264 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:32.019 INFO 53264 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:32.023 INFO 53264 [main] com.boot.store.StartApp Started StartApp in 6.542 seconds (JVM running for 11.163)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:35.475 INFO 53264 [RMI TCP Connection(3)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:35.475 INFO 53264 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:06:35.485 INFO 53264 [RMI TCP Connection(3)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 10 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:06.900 INFO 36112 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 36112 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:06.910 INFO 36112 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:08.680 INFO 36112 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.020 INFO 36112 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.030 INFO 36112 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.030 INFO 36112 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.030 INFO 36112 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.180 INFO 36112 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.180 INFO 36112 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2140 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.680 INFO 36112 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:09.781 INFO 36112 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:10.230 INFO 36112 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:10.917 INFO 36112 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:11.298 INFO 36112 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:11.371 INFO 36112 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:11.404 INFO 36112 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:11.409 INFO 36112 [main] com.boot.store.StartApp Started StartApp in 5.964 seconds (JVM running for 9.519)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:13.361 INFO 36112 [RMI TCP Connection(1)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:13.362 INFO 36112 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:12:13.377 INFO 36112 [RMI TCP Connection(1)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 15 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:05.639 INFO 52468 [main] com.boot.store.StartApp Starting StartApp on DESKTOP-DFK2KDV with PID 52468 (D:\work\store-app\target\classes started by aiwei in D:\work\store-app)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:05.701 INFO 52468 [main] com.boot.store.StartApp The following profiles are active: dev
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:07.866 INFO 52468 [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.394 INFO 52468 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8889 (http)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.414 INFO 52468 [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.416 INFO 52468 [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.416 INFO 52468 [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.556 INFO 52468 [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:08.556 INFO 52468 [main] org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2737 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:09.211 INFO 52468 [main] org.springframework.boot.web.servlet.RegistrationBean Filter webStatFilter was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:09.213 INFO 52468 [main] org.springframework.boot.web.servlet.RegistrationBean Servlet statViewServlet was not registered (possibly already registered?)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:09.774 INFO 52468 [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:10.620 INFO 52468 [main] com.alibaba.druid.pool.DruidDataSource {dataSource-1} inited
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:11.147 INFO 52468 [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:11.230 INFO 52468 [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8889"]
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:11.273 INFO 52468 [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8889 (http) with context path ''
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:11.278 INFO 52468 [main] com.boot.store.StartApp Started StartApp in 7.112 seconds (JVM running for 12.1)
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:13.157 INFO 52468 [RMI TCP Connection(2)-192.168.216.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:13.158 INFO 52468 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:39:13.175 INFO 52468 [RMI TCP Connection(2)-192.168.216.2] org.springframework.web.servlet.DispatcherServlet Completed initialization in 16 ms
+[store:0.0.0.0:8889] [,] 2020-07-08 19:59:58.580 INFO 52468 [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+[store:0.0.0.0:8889] [,] 2020-07-08 19:59:58.600 INFO 52468 [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource {dataSource-1} closed

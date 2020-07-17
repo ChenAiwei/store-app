@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.UserAuthCustomMapper">
+
+    <resultMap id="userRoleMap" type="com.boot.store.dto.auth.UserRoleDto">
+        <result column="userId" jdbcType="VARCHAR" property="userId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+        <result column="email" jdbcType="VARCHAR" property="emial"/>
+        <result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="login_count" jdbcType="INTEGER" property="loginCount"/>
+        <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+        <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp"/>
+        <result column="user_status" jdbcType="INTEGER" property="userStatus"/>
+        <result column="uuid" jdbcType="VARCHAR" property="uuid"/>
+        <result column="qq_number" jdbcType="VARCHAR" property="qqNumber"/>
+        <result column="we_chat" jdbcType="VARCHAR" property="weChat"/>
+        <result column="comment_status" jdbcType="INTEGER" property="commentStatus"/>
+        <result column="browser" jdbcType="VARCHAR" property="browser"/>
+        <result column="os" jdbcType="VARCHAR" property="os"/>
+        <collection property="roleList" ofType="com.boot.store.entity.TRole">
+            <result column="roleId" jdbcType="VARCHAR" property="uid"/>
+            <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
+            <result column="role_status" jdbcType="INTEGER" property="status"/>
+            <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+            <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+            <result column="category_menu_uids" jdbcType="VARCHAR" property="categoryMenuUids"/>
+        </collection>
+
+    </resultMap>
+    <select id="userRole" resultMap="userRoleMap">
+        SELECT
+            u.uid AS userId,
+            u.user_name,
+            u.nick_name,
+            u.gender,
+            u.avatar,
+            u.email,
+            u.birthday,
+            u.mobile,
+            u.login_count,
+            u.last_login_time,
+            u.last_login_ip,
+            u.`status` AS user_status,
+            u.uuid,
+            u.qq_number,
+            u.we_chat,
+            u.comment_status,
+            u.browser,
+            u.os,
+            r.uid AS roleId,
+            r.role_name,
+            r.`status` AS role_status,
+            r.create_time,
+            r.update_time,
+            r.category_menu_uids
+        FROM
+            t_user u
+            LEFT JOIN t_user_role ur ON u.uid = ur.user_id
+            LEFT JOIN t_role r ON ur.role_id = r.uid
+        WHERE
+            1=1
+        <if test="uid !=null and uid != ''">
+            and u.uid = #{uid}
+        </if>
+
+    </select>
+</mapper>
