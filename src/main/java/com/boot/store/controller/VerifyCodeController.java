@@ -6,7 +6,6 @@ import com.boot.store.utils.ResultVoUtil;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.utils.VerifyCodeUtil;
 import com.boot.store.vo.ResultVo;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
