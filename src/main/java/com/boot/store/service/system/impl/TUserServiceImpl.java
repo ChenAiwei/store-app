@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.boot.store.dto.system.RoleNameDto;
 import com.boot.store.dto.auth.RoleUserInfoDto;
 import com.boot.store.dto.auth.UserDto;
+import com.boot.store.dto.system.RoleNameDto;
 import com.boot.store.entity.TRole;
 import com.boot.store.entity.TUser;
 import com.boot.store.entity.TUserRole;
@@ -16,8 +16,10 @@ import com.boot.store.mapper.TUserMapper;
 import com.boot.store.service.system.ITRoleService;
 import com.boot.store.service.system.ITUserRoleService;
 import com.boot.store.service.system.ITUserService;
+import com.boot.store.utils.MD5Util;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
+import com.boot.store.vo.user.UserEditVo;
 import com.boot.store.vo.user.UserVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -26,6 +28,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -47,31 +51,30 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void saveUser(UserDto userDto) {
-		List<TUser> nameList = this.list(new QueryWrapper<TUser>().eq("user_name", userDto.getUserName()));
+	public void saveUser(UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		List<TUser> nameList = this.list(new QueryWrapper<TUser>().eq("user_name", userVo.getUserName()));
 		if (CollectionUtils.isNotEmpty(nameList)){
 			throw new ServiceException("用户名已存在");
 		}
 		TUser user = new TUser();
-		BeanUtils.copyProperties(userDto,user);
 		user.setUid(UUIDUtils.genUid());
+		user = combineVo(user,userVo);
 		user.setCreateTime(new Date());
 		this.save(user);
-		this.saveUserRole(userDto,user.getUid());
+		this.saveUserRole(user.getUid(),userVo.getRoleIdLits());
 	}
 
-	private void saveUserRole(UserDto userDto, String uid) {
-		if (CollectionUtils.isEmpty(userDto.getRoleUserInfoDtoList())){
+	private void saveUserRole(String uid, List<String> roleIdList) {
+		userRoleService.remove(new QueryWrapper<TUserRole>().eq("user_id",uid));
+		if (CollectionUtils.isEmpty(roleIdList)){
 			return;
 		}
-		List<String> roleIdList = userDto.getRoleUserInfoDtoList().stream().map(dto -> dto.getRoleId()).collect(Collectors.toList());
-		Collection<TRole> roleCollection = roleService.listByIds(roleIdList);
 		List<TUserRole> insertList = new ArrayList<>();
-		roleCollection.forEach(role ->{
+		roleIdList.forEach(roleId ->{
 			TUserRole tUserRole = new TUserRole();
 			tUserRole.setUid(UUIDUtils.genUid());
 			tUserRole.setUserId(uid);
-			tUserRole.setRoleId(role.getUid());
+			tUserRole.setRoleId(roleId);
 			insertList.add(tUserRole);
 		});
 		if (CollectionUtils.isNotEmpty(insertList)){
@@ -81,21 +84,32 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void editUser(UserDto userDto) {
-		String uid = userDto.getUid();
+	public void editUser(UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		String uid = userVo.getUid();
 		TUser user = this.getById(uid);
 		if (null == user){
 			throw new ServiceException("修改失败,用户不存在");
 		}
-		List<TUser> nameList = this.list(new QueryWrapper<TUser>().eq("user_name", userDto.getUserName()));
-		if (CollectionUtils.isNotEmpty(nameList) && !nameList.get(0).getUid().equals(userDto.getUid())){
+		List<TUser> nameList = this.list(new QueryWrapper<TUser>().eq("user_name", userVo.getUserName()));
+		if (CollectionUtils.isNotEmpty(nameList) && !nameList.get(0).getUid().equals(userVo.getUid())){
 			throw new ServiceException("用户名已存在");
 		}
-		BeanUtils.copyProperties(userDto,user);
-		user.setUid(uid);
+		user = combineVo(user,userVo);
+		user.setUpdateTime(new Date());
 		this.updateById(user);
-		userRoleService.remove(new QueryWrapper<TUserRole>().eq("user_id",uid));
-		this.saveUserRole(userDto,uid);
+		this.saveUserRole(uid,userVo.getRoleIdLits());
+	}
+
+	private TUser combineVo(TUser user,UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		user.setUserName(userVo.getUserName());
+		user.setNickName(userVo.getNickName());
+		user.setMobile(userVo.getPhone());
+		user.setEmail(userVo.getEmail());
+		user.setPassWord(MD5Util.getEncryptedPwd(userVo.getPassword()));
+		user.setBirthday(DateUtil.parseDate(userVo.getBirthday()));
+		user.setStatus(StringUtils.isNotBlank(userVo.getStatus())?true:false);
+		user.setGender(Integer.valueOf(userVo.getSex()));
+		return user;
 	}
 
 	@Override

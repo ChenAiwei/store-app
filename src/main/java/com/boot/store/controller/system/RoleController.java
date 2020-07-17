@@ -5,6 +5,7 @@ import com.boot.store.annotation.Log;
 import com.boot.store.dto.auth.RoleDto;
 import com.boot.store.dto.auth.UserRoleInfoDto;
 import com.boot.store.dto.auth.ValidationGroups;
+import com.boot.store.entity.TRole;
 import com.boot.store.entity.TUserRole;
 import com.boot.store.enums.LogEnum;
 import com.boot.store.service.system.ITCategoryMenuService;
@@ -16,6 +17,7 @@ import com.boot.store.vo.PageVo;
 import com.boot.store.vo.ResultVo;
 import com.boot.store.vo.menu.MenuVo;
 import com.boot.store.vo.role.RoleEditVo;
+import com.boot.store.vo.role.RoleNameInfoVo;
 import com.boot.store.vo.role.RoleVo;
 import com.boot.store.vo.user.UserInfoShuttleAddVo;
 import com.boot.store.vo.user.UserInfoVo;
@@ -113,5 +115,19 @@ public class RoleController {
 	@GetMapping("/menuTree")
 	public ResultVo<List<MenuVo>> menuTree(){
 		return ResultVoUtil.success(categoryMenuService.menuTree(null));
+	}
+
+	@GetMapping("/roleNameInfo")
+	public ResultVo<List<RoleNameInfoVo>> roleNameInfo(){
+		List<RoleNameInfoVo> resultList = new ArrayList<>();
+		List<TRole> list = roleService.list(new QueryWrapper<>());
+		list.forEach(l->{
+			RoleNameInfoVo roleNameInfoVo = RoleNameInfoVo.builder().value(l.getUid())
+					.name(l.getRoleName())
+					.selected(false)
+					.disabled(!l.getStatus()).build();
+			resultList.add(roleNameInfoVo);
+		});
+		return ResultVoUtil.success(resultList);
 	}
 }

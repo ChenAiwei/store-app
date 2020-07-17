@@ -21,19 +21,16 @@ public class UserDto implements Serializable {
 	/**
 	 * 唯一uid
 	 */
-	@NotBlank(message = "uid 不允许为空",groups = ValidationGroups.Editer.class)
 	private String uid;
 
 	/**
 	 * 用户名
 	 */
-	@NotBlank(message = "userName 不允许为空",groups = {ValidationGroups.Register.class,ValidationGroups.Editer.class})
 	private String userName;
 
 	/**
 	 * 密码
 	 */
-	@NotBlank(message = "passWord 不允许为空",groups = ValidationGroups.Register.class)
 	private String passWord;
 
 	/**
@@ -44,7 +41,6 @@ public class UserDto implements Serializable {
 	/**
 	 * 性别(1:男2:女)
 	 */
-	@NotNull(message = "gender 不允许为空",groups = ValidationGroups.Register.class)
 	private Integer gender;
 
 	/**

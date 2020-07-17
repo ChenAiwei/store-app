@@ -4,8 +4,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.dto.auth.UserDto;
 import com.boot.store.entity.TUser;
 import com.boot.store.vo.PageVo;
+import com.boot.store.vo.user.UserEditVo;
 import com.boot.store.vo.user.UserVo;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -20,17 +23,17 @@ public interface ITUserService extends IService<TUser> {
 
 	/**
 	 * 用户添加
-	 * @param userDto
+	 * @param userVo
 	 * @return
 	 */
-	void saveUser(UserDto userDto);
+	void saveUser(UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
 	/**
 	 * 用户修改
-	 * @param userDto
+	 * @param userVo
 	 * @return
 	 */
-	void editUser(UserDto userDto);
+	void editUser(UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
 	/**
 	 * 用户ID 查询用户信息

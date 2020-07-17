@@ -10,6 +10,7 @@ import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.ResultVoUtil;
 import com.boot.store.vo.PageVo;
 import com.boot.store.vo.ResultVo;
+import com.boot.store.vo.user.UserEditVo;
 import com.boot.store.vo.user.UserInfoShuttleQueryVo;
 import com.boot.store.vo.user.UserInfoVo;
 import com.boot.store.vo.user.UserVo;
@@ -19,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,14 +56,14 @@ public class UserController {
 	}
 
 	@PostMapping("/addUser")
-	public ResultVo<?> addUser(@Validated(ValidationGroups.Register.class) @RequestBody UserDto userDto){
-		userService.saveUser(userDto);
+	public ResultVo<?> addUser(@Validated(ValidationGroups.Register.class) @RequestBody UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		userService.saveUser(userVo);
 		return ResultVoUtil.success();
 	}
 
 	@PostMapping("/editUser")
-	public ResultVo<String> editUser(@Validated(ValidationGroups.Editer.class) @RequestBody UserDto userDto){
-		userService.editUser(userDto);
+	public ResultVo<String> editUser(@Validated(ValidationGroups.Editer.class) @RequestBody UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		userService.editUser(userVo);
 		return ResultVoUtil.success();
 	}
 
