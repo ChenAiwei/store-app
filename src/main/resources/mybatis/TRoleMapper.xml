@@ -21,7 +21,7 @@
     <select id="getNameByUserIdList" resultType="com.boot.store.dto.system.RoleNameDto">
         SELECT
             tur.user_id as userId,
-            tr.role_name as roleName
+            GROUP_CONCAT(tr.role_name) as roleName
         from
             t_user_role tur
         left join t_user tu on tur.user_id = tu.uid
@@ -33,6 +33,7 @@
                 #{uid}
             </foreach>
         </if>
+        GROUP BY  tur.user_id
     </select>
 
 </mapper>

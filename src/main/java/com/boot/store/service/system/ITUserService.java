@@ -59,4 +59,11 @@ public interface ITUserService extends IService<TUser> {
 	 * @return
 	 */
 	PageVo<UserVo> listUser(Integer page, Integer limit, String startTime, String endTime, String userName);
+
+	/**
+	 * web根据id返回编辑的用户信息
+	 * @param id
+	 * @return
+	 */
+	UserEditVo getUserById(String id);
 }

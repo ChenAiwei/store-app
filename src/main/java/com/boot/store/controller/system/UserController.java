@@ -1,10 +1,12 @@
 package com.boot.store.controller.system;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.boot.store.annotation.Log;
 import com.boot.store.dto.auth.UserDto;
 import com.boot.store.dto.auth.ValidationGroups;
 import com.boot.store.entity.TUser;
 import com.boot.store.entity.TUserRole;
+import com.boot.store.enums.LogEnum;
 import com.boot.store.service.system.ITUserRoleService;
 import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.ResultVoUtil;
@@ -47,6 +49,7 @@ public class UserController {
 		return ResultVoUtil.success(userService.queryByUserId(uid));
 	}
 
+	@Log(option = "删除用户",type = LogEnum.DEL)
 	@GetMapping("/delUser/{uid}")
 	@Transactional(rollbackFor = Exception.class)
 	public ResultVo<?> delUser(@PathVariable String uid){
@@ -55,12 +58,14 @@ public class UserController {
 		return ResultVoUtil.success();
 	}
 
+	@Log(option = "添加用户",type = LogEnum.ADD)
 	@PostMapping("/addUser")
 	public ResultVo<?> addUser(@Validated(ValidationGroups.Register.class) @RequestBody UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		userService.saveUser(userVo);
 		return ResultVoUtil.success();
 	}
 
+	@Log(option = "编辑用户",type = LogEnum.EDIT)
 	@PostMapping("/editUser")
 	public ResultVo<String> editUser(@Validated(ValidationGroups.Editer.class) @RequestBody UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		userService.editUser(userVo);
@@ -91,5 +96,11 @@ public class UserController {
 			userList.add(vo);
 		});
 		return ResultVoUtil.success(UserInfoShuttleQueryVo.builder().shuttleList(userList).valueList(valueList).build());
+	}
+
+	@GetMapping("/getUserById")
+	public ResultVo<UserEditVo> getUserById(@RequestParam(required = true) String id){
+		UserEditVo userEditVo = userService.getUserById(id);
+		return ResultVoUtil.success(userEditVo);
 	}
 }

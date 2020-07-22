@@ -19,6 +19,7 @@ import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.MD5Util;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
+import com.boot.store.vo.role.RoleNameInfoVo;
 import com.boot.store.vo.user.UserEditVo;
 import com.boot.store.vo.user.UserVo;
 import org.apache.commons.collections.CollectionUtils;
@@ -107,7 +108,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		user.setEmail(userVo.getEmail());
 		user.setPassWord(MD5Util.getEncryptedPwd(userVo.getPassword()));
 		user.setBirthday(DateUtil.parseDate(userVo.getBirthday()));
-		user.setStatus(StringUtils.isNotBlank(userVo.getStatus())?true:false);
+		user.setStatus(userVo.getStatus().equals("0")?false:true);
 		user.setGender(Integer.valueOf(userVo.getSex()));
 		return user;
 	}
@@ -169,6 +170,38 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 			userVoList.add(userVo);
 		});
 		return new PageVo<>(resultPage.getTotal(),userVoList);
+	}
+
+	@Override
+	public UserEditVo getUserById(String id) {
+		UserEditVo userEditVo = new UserEditVo();
+		TUser user = this.getById(id);
+		if (user == null){
+			throw new ServiceException("用户不存在!");
+		}
+		userEditVo.setUid(user.getUid());
+		userEditVo.setBirthday(DateUtil.formatDateTime(user.getBirthday()));
+		userEditVo.setEmail(user.getEmail());
+		userEditVo.setNickName(user.getNickName());
+		userEditVo.setPassword("");
+		userEditVo.setPhone(user.getMobile());
+		userEditVo.setSex(String.valueOf(user.getGender()));
+		userEditVo.setStatus(user.getStatus()?"1":"0");
+		userEditVo.setUserName(user.getUserName());
+		List<RoleNameInfoVo> roleList = new ArrayList<>();
+		List<TRole> tRoleList = roleService.list(new QueryWrapper<>());
+		List<RoleUserInfoDto> roleUserList = this.getRoleUserList(id);
+		List<String> roleIdList = roleUserList.stream().map(e -> e.getRoleId()).collect(Collectors.toList());
+		tRoleList.forEach(role ->{
+			RoleNameInfoVo roleNameInfoVo = RoleNameInfoVo.builder().name(role.getRoleName())
+					.value(role.getUid())
+					.disabled(!role.getStatus())
+					.selected(roleIdList.contains(role.getUid()))
+					.build();
+			roleList.add(roleNameInfoVo);
+		});
+		userEditVo.setRoleList(roleList);
+		return userEditVo;
 	}
 
 	public List<RoleUserInfoDto> getRoleUserList(String userId){

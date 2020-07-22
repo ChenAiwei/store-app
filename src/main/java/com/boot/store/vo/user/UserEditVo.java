@@ -1,8 +1,11 @@
 package com.boot.store.vo.user;
 
 import com.boot.store.dto.auth.ValidationGroups;
+import com.boot.store.vo.role.RoleNameInfoVo;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -16,6 +19,8 @@ import java.util.List;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserEditVo implements Serializable {
 	@NotBlank(message = "uid 不允许为空",groups = ValidationGroups.Editer.class)
 	private String uid;
@@ -31,4 +36,5 @@ public class UserEditVo implements Serializable {
 	@NotBlank(message = "sex 不允许为空",groups = {ValidationGroups.Register.class,ValidationGroups.Editer.class})
 	private String sex;
 	private List<String> roleIdLits;
+	private List<RoleNameInfoVo> roleList;
 }
