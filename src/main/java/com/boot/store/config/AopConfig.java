@@ -28,6 +28,8 @@ public class AopConfig {
 
 	@Autowired
 	private AsyncService asyncService;
+	private static final Integer OPT_SUCCESS = 1;
+	private static final Integer OPT_ERROR = 0;
 
 	@Pointcut("@within(org.springframework.stereotype.Controller) || @within(org.springframework.web.bind.annotation.RestController)")
 	public void pointcut() {}
@@ -53,11 +55,11 @@ public class AopConfig {
 			Long after = System.currentTimeMillis();
 			log.info("共耗时：" + (after - before) + "毫秒");
 			log.info("方法返回：return:" + o);
-			asyncService.executeAsyncLog(userId,annotation.option(),className,methodName,url,args,o,annotation.type().getType(),(after - before));
+			asyncService.executeAsyncLog(userId,annotation.option(),className,methodName,url,args,o,annotation.type().getType(),(after - before),OPT_SUCCESS);
 			return o;
 		} catch (Throwable throwable) {
 			Long after = System.currentTimeMillis();
-			asyncService.executeAsyncLog(userId,annotation.option(),className,methodName,url,args,throwable.getMessage(),annotation.type().getType(),(after - before));
+			asyncService.executeAsyncLog(userId,annotation.option(),className,methodName,url,args,throwable.getMessage(),annotation.type().getType(),(after - before),OPT_ERROR);
 			throw throwable;
 		}
 	}

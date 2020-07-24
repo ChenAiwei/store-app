@@ -13,6 +13,7 @@
         <result column="request_params" property="requestParams" />
         <result column="response_body" property="responseBody" />
         <result column="opt_type" property="optType" />
+        <result column="opt_status" property="optStatus" />
         <result column="time_consu" property="timeConsu" />
         <result column="create_time" property="createTime" />
     </resultMap>

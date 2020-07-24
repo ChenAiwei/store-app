@@ -12,11 +12,9 @@ import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.ResultVoUtil;
 import com.boot.store.vo.PageVo;
 import com.boot.store.vo.ResultVo;
-import com.boot.store.vo.user.UserEditVo;
-import com.boot.store.vo.user.UserInfoShuttleQueryVo;
-import com.boot.store.vo.user.UserInfoVo;
-import com.boot.store.vo.user.UserVo;
+import com.boot.store.vo.user.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
@@ -50,11 +48,12 @@ public class UserController {
 	}
 
 	@Log(option = "删除用户",type = LogEnum.DEL)
-	@GetMapping("/delUser/{uid}")
+	@PostMapping("/delUser")
 	@Transactional(rollbackFor = Exception.class)
-	public ResultVo<?> delUser(@PathVariable String uid){
-		userRoleService.remove(new QueryWrapper<TUserRole>().eq("user_id",uid));
-		userService.removeById(uid);
+	public ResultVo<?> delUser(@RequestBody List<String> idList){
+		List<String> list = idList.stream().filter(id -> StringUtils.isNotBlank(id)).collect(Collectors.toList());
+		userRoleService.remove(new QueryWrapper<TUserRole>().in("user_id",list));
+		userService.removeByIds(list);
 		return ResultVoUtil.success();
 	}
 
@@ -69,6 +68,12 @@ public class UserController {
 	@PostMapping("/editUser")
 	public ResultVo<String> editUser(@Validated(ValidationGroups.Editer.class) @RequestBody UserEditVo userVo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		userService.editUser(userVo);
+		return ResultVoUtil.success();
+	}
+
+	@PostMapping("/userStatus")
+	public ResultVo<?> userStatus(@Validated @RequestBody UserStatusVo userStatusVo){
+		userService.userStatus(userStatusVo);
 		return ResultVoUtil.success();
 	}
 

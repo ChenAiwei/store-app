@@ -21,6 +21,7 @@ import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
 import com.boot.store.vo.role.RoleNameInfoVo;
 import com.boot.store.vo.user.UserEditVo;
+import com.boot.store.vo.user.UserStatusVo;
 import com.boot.store.vo.user.UserVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -202,6 +203,15 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		});
 		userEditVo.setRoleList(roleList);
 		return userEditVo;
+	}
+
+	@Override
+	public void userStatus(UserStatusVo userStatusVo) {
+		List<TUser> userList = new ArrayList<>();
+		userStatusVo.getUidList().stream().filter(id ->StringUtils.isNotBlank(id)).forEach(id ->{
+			userList.add(new TUser().setUid(id).setStatus(userStatusVo.getType() == 0?false:true));
+		});
+		this.updateBatchById(userList);
 	}
 
 	public List<RoleUserInfoDto> getRoleUserList(String userId){

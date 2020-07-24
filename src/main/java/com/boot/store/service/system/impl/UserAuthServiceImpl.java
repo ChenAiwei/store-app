@@ -168,4 +168,15 @@ public class UserAuthServiceImpl implements IUserAuthService {
 		}
 		return treeNode;
 	}
+
+
+	/**
+	 * 系统的所有权限Tree结构
+	 * @return
+	 */
+	@Override
+	public List<CategoryMenuDto> tree() {
+		List<TCategoryMenu> categoryMenus = categoryMenuService.list(new QueryWrapper<TCategoryMenu>());
+		return this.combineAndSortMenu(categoryMenus);
+	}
 }

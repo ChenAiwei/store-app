@@ -5,6 +5,7 @@ import com.boot.store.dto.auth.UserDto;
 import com.boot.store.entity.TUser;
 import com.boot.store.vo.PageVo;
 import com.boot.store.vo.user.UserEditVo;
+import com.boot.store.vo.user.UserStatusVo;
 import com.boot.store.vo.user.UserVo;
 
 import java.io.UnsupportedEncodingException;
@@ -66,4 +67,10 @@ public interface ITUserService extends IService<TUser> {
 	 * @return
 	 */
 	UserEditVo getUserById(String id);
+
+	/**
+	 * web改变用户状态
+	 * @param userStatusVo
+	 */
+	void userStatus(UserStatusVo userStatusVo);
 }

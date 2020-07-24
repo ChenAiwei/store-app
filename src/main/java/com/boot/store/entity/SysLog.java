@@ -57,6 +57,9 @@ public class SysLog extends Model<SysLog> {
 	@TableField("opt_type")
 	private Integer optType;
 
+	@TableField("opt_status")
+	private Integer optStatus;
+
     @TableField("time_consu")
     private Long timeConsu;
 

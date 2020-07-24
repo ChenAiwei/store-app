@@ -19,6 +19,7 @@ public class CategoryMenuDto implements Serializable {
 	/**
 	 * 唯一uid
 	 */
+	@JsonProperty(value = "id")
 	private String uid;
 
 	/**

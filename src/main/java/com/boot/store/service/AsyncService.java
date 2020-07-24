@@ -18,6 +18,7 @@ public interface AsyncService {
 	 * @param o
 	 * @param type
 	 * @param l
+	 * @param status
 	 */
-	void executeAsyncLog(String userId, String option, String className, String methodName, String url, Object[] args, Object o, Integer type, long l);
+	void executeAsyncLog(String userId, String option, String className, String methodName, String url, Object[] args, Object o, Integer type, long l,Integer status);
 }

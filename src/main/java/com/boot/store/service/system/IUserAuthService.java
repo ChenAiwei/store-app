@@ -1,5 +1,6 @@
 package com.boot.store.service.system;
 
+import com.boot.store.dto.auth.CategoryMenuDto;
 import com.boot.store.dto.auth.UserAuthDto;
 
 import java.util.List;
@@ -17,4 +18,9 @@ public interface IUserAuthService {
 	 */
 	List<UserAuthDto> info(String uid);
 
+	/**
+	 * 系统的所有权限Tree结构
+	 * @return
+	 */
+	List<CategoryMenuDto> tree();
 }

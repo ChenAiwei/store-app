@@ -1,5 +1,6 @@
 package com.boot.store.controller.system;
 
+import com.boot.store.dto.auth.CategoryMenuDto;
 import com.boot.store.dto.auth.UserAuthDto;
 import com.boot.store.service.system.IUserAuthService;
 import com.boot.store.utils.ResultVoUtil;
@@ -40,4 +41,10 @@ public class UserAuthController {
 	public ResultVo<List<UserAuthDto>> listAll(){
 		return ResultVoUtil.success(userAuthService.info(null));
 	}
+
+	@GetMapping("/tree")
+	public ResultVo<List<CategoryMenuDto>> tree(){
+		return ResultVoUtil.success(userAuthService.tree());
+	}
+
 }

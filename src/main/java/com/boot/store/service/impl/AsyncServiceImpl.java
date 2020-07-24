@@ -24,7 +24,7 @@ public class AsyncServiceImpl implements AsyncService {
 
 	@Async("asyncExecutor")
 	@Override
-	public void executeAsyncLog(String userId, String option, String className, String methodName, String url, Object[] args, Object o, Integer type, long l) {
+	public void executeAsyncLog(String userId, String option, String className, String methodName, String url, Object[] args, Object o, Integer type, long l,Integer status) {
 		List<Object> objectsList = Arrays.asList(args);
 		String requestParamsStr = JsonUtils.objectToJson(objectsList);
 		String responseStr = JsonUtils.objectToJson(o);
@@ -36,6 +36,7 @@ public class AsyncServiceImpl implements AsyncService {
 				.requestParams(requestParamsStr)
 				.responseBody(responseStr)
 				.optType(type)
+				.optStatus(status)
 				.timeConsu(l)
 				.createTime(new Date())
 				.build();
