@@ -1,4 +1,4 @@
-package com.boot.store.config;
+package com.boot.store.handler;
 
 import com.boot.store.enums.ResultEnum;
 import com.boot.store.exception.PermissionException;

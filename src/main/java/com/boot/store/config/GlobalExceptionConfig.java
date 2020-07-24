@@ -1,5 +1,6 @@
 package com.boot.store.config;
 
+import com.boot.store.handler.RestExceptionHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

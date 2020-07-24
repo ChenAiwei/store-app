@@ -1,4 +1,4 @@
-package com.boot.store.config;
+package com.boot.store.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
