@@ -23,7 +23,7 @@ import java.util.Set;
 
 /**
  * @Author：chenaiwei
- * @Description：InterFaceFilter
+ * @Description：PermissionFilter
  * @CreateDate：2020/7/12 20:29
  */
 @WebFilter("/*")

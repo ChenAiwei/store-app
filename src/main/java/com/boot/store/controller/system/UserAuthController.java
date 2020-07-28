@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,7 +45,13 @@ public class UserAuthController {
 
 	@GetMapping("/tree")
 	public ResultVo<List<CategoryMenuDto>> tree(){
-		return ResultVoUtil.success(userAuthService.tree());
+		List<CategoryMenuDto> parentList  = new ArrayList<>();
+		CategoryMenuDto categoryMenuDto = new CategoryMenuDto();
+		categoryMenuDto.setName("根目录");
+		categoryMenuDto.setIsShow(true);
+		categoryMenuDto.setChildMenuList(userAuthService.tree());
+		parentList.add(categoryMenuDto);
+		return ResultVoUtil.success(parentList);
 	}
 
 }
