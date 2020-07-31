@@ -31,7 +31,7 @@ public class TCategoryMenu extends Model<TCategoryMenu> {
     /**
      * 唯一uid
      */
-    @TableId(value = "uid", type = IdType.AUTO)
+    @TableId(value = "uid")
     private String uid;
 
     /**
@@ -40,10 +40,10 @@ public class TCategoryMenu extends Model<TCategoryMenu> {
     private String name;
 
     /**
-     * 菜单级别
+     * 权限标识
      */
-    @TableField("menu_level")
-    private Boolean menuLevel;
+    @TableField("tag")
+    private String tag;
 
     /**
      * 简介

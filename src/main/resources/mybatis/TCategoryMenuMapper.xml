@@ -6,7 +6,7 @@
     <resultMap id="BaseResultMap" type="com.boot.store.entity.TCategoryMenu">
         <id column="uid" property="uid" />
         <result column="name" property="name" />
-        <result column="menu_level" property="menuLevel" />
+        <result column="tag" property="tag" />
         <result column="summary" property="summary" />
         <result column="parent_uid" property="parentUid" />
         <result column="url" property="url" />

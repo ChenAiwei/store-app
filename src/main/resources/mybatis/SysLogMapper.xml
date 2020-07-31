@@ -4,23 +4,82 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.boot.store.entity.SysLog">
-        <id column="id" property="id" />
-        <result column="user_id" property="userId" />
-        <result column="model_name" property="modelName" />
-        <result column="class_name" property="className" />
-        <result column="method_name" property="methodName" />
-        <result column="request_url" property="requestUrl" />
-        <result column="request_params" property="requestParams" />
-        <result column="response_body" property="responseBody" />
-        <result column="opt_type" property="optType" />
-        <result column="opt_status" property="optStatus" />
-        <result column="time_consu" property="timeConsu" />
-        <result column="create_time" property="createTime" />
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="model_name" property="modelName"/>
+        <result column="class_name" property="className"/>
+        <result column="method_name" property="methodName"/>
+        <result column="request_url" property="requestUrl"/>
+        <result column="request_params" property="requestParams"/>
+        <result column="response_body" property="responseBody"/>
+        <result column="opt_type" property="optType"/>
+        <result column="opt_status" property="optStatus"/>
+        <result column="time_consu" property="timeConsu"/>
+        <result column="create_time" property="createTime"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, user_id, model_name, class_name, method_name, request_url, request_params, response_body, opt_type,time_consu, create_time
     </sql>
+    <select id="listCustom" resultType="com.boot.store.vo.system.SysLogVo">
+        SELECT
+        sl.user_id as optUserId,
+        tu.user_name as optUserName,
+        sl.model_name as modelName,
+        sl.class_name as className,
+        sl.method_name as methodName,
+        sl.request_url as requestUrl,
+        sl.request_params as requestParams,
+        sl.response_body as responseBody,
+        sl.opt_type as optType,
+        sl.opt_status as optStatus,
+        CONCAT(TRUNCATE((sl.time_consu/1000),3),'s') as timeConsu,
+        sl.create_time as createTime
+        FROM
+        sys_log sl
+        LEFT JOIN t_user tu ON sl.user_id = tu.uid
+        WHERE 1=1
+        <if test="queryParamsVo.startTime != null and queryParamsVo.startTime != ''">
+            and sl.create_time &gt;= #{queryParamsVo.startTime}
+        </if>
+        <if test="queryParamsVo.endTime != null and queryParamsVo.endTime != ''">
+            and sl.create_time &lt;= #{queryParamsVo.endTime}
+        </if>
+        <if test="queryParamsVo.optUserName != null and queryParamsVo.optUserName != ''">
+            and tu.user_name = #{queryParamsVo.optUserName}
+        </if>
+        <if test="queryParamsVo.optType != null">
+            and sl.opt_type = #{queryParamsVo.optType}
+        </if>
+        <if test="queryParamsVo.optStatus != null">
+            and sl.opt_status = #{queryParamsVo.optStatus}
+        </if>
+        order by sl.create_time desc
+        LIMIT #{queryParamsVo.page},#{queryParamsVo.limit}
+    </select>
+    <select id="countCustom" resultType="java.lang.Long">
+        SELECT
+            count(*)
+        FROM
+        sys_log sl
+        LEFT JOIN t_user tu ON sl.user_id = tu.uid
+        WHERE 1=1
+        <if test="queryParamsVo.startTime != null and queryParamsVo.startTime != ''">
+            and sl.create_time &gt;= #{queryParamsVo.startTime}
+        </if>
+        <if test="queryParamsVo.endTime != null and queryParamsVo.endTime != ''">
+            and sl.create_time &lt;= #{queryParamsVo.endTime}
+        </if>
+        <if test="queryParamsVo.optUserName != null and queryParamsVo.optUserName != ''">
+            and tu.user_name = #{queryParamsVo.optUserName}
+        </if>
+        <if test="queryParamsVo.optType != null">
+            and sl.opt_type = #{queryParamsVo.optType}
+        </if>
+        <if test="queryParamsVo.optStatus != null">
+            and sl.opt_status = #{queryParamsVo.optStatus}
+        </if>
+    </select>
 
 </mapper>

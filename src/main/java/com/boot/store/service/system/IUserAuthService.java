@@ -2,6 +2,7 @@ package com.boot.store.service.system;
 
 import com.boot.store.dto.auth.CategoryMenuDto;
 import com.boot.store.dto.auth.UserAuthDto;
+import com.boot.store.vo.menu.MenuEditVo;
 
 import java.util.List;
 
@@ -23,4 +24,30 @@ public interface IUserAuthService {
 	 * @return
 	 */
 	List<CategoryMenuDto> tree();
+
+	/**
+	 * 菜单权限的添加
+	 * @param menuEditVo
+	 */
+	void add(MenuEditVo menuEditVo);
+
+	/**
+	 * 菜单权限的获取
+	 * @param id
+	 * @return
+	 */
+	MenuEditVo item(String id);
+
+	/**
+	 * 菜单权限的编辑
+	 * @param menuEditVo
+	 */
+	void edit(MenuEditVo menuEditVo);
+
+	/**
+	 * 删除菜单
+	 * @param id
+	 * @return
+	 */
+	Boolean del(String id);
 }

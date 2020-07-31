@@ -31,7 +31,7 @@ public class CategoryMenuDto implements Serializable {
 	/**
 	 * 菜单级别
 	 */
-	private Boolean menuLevel;
+	private String tag;
 
 	/**
 	 * 简介
@@ -81,7 +81,7 @@ public class CategoryMenuDto implements Serializable {
 	private Boolean isShow;
 
 	/**
-	 * 菜单类型 0: 菜单   1: 按钮
+	 * 菜单类型 0: 目录   1: 菜单  2：按钮
 	 */
 	private Integer menuType;
 

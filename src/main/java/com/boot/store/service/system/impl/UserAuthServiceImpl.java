@@ -7,20 +7,22 @@ import com.boot.store.dto.auth.UserAuthDto;
 import com.boot.store.dto.auth.UserRoleDto;
 import com.boot.store.entity.TCategoryMenu;
 import com.boot.store.entity.TRole;
+import com.boot.store.exception.ServiceException;
 import com.boot.store.mapper.UserAuthCustomMapper;
 import com.boot.store.service.system.ITCategoryMenuService;
+import com.boot.store.service.system.ITRoleService;
 import com.boot.store.service.system.IUserAuthService;
 import com.boot.store.utils.JsonUtils;
+import com.boot.store.utils.UUIDUtils;
+import com.boot.store.vo.menu.MenuEditVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -36,6 +38,9 @@ public class UserAuthServiceImpl implements IUserAuthService {
 
 	@Autowired
 	private ITCategoryMenuService categoryMenuService;
+
+	@Autowired
+	private ITRoleService roleService;
 
 	@Override
 	public List<UserAuthDto> info(String uid) {
@@ -178,5 +183,77 @@ public class UserAuthServiceImpl implements IUserAuthService {
 	public List<CategoryMenuDto> tree() {
 		List<TCategoryMenu> categoryMenus = categoryMenuService.list(new QueryWrapper<TCategoryMenu>());
 		return this.combineAndSortMenu(categoryMenus);
+	}
+
+	@Override
+	public void add(MenuEditVo menuEditVo) {
+		TCategoryMenu categoryMenu = new TCategoryMenu();
+		categoryMenu.setUid(UUIDUtils.genUid());
+		categoryMenu.setParentUid(menuEditVo.getPid());
+		categoryMenu.setName(menuEditVo.getName());
+		categoryMenu.setTag(menuEditVo.getTag());
+		categoryMenu.setUrl(menuEditVo.getHref());
+		categoryMenu.setIcon(menuEditVo.getIcon());
+		categoryMenu.setSort(Integer.valueOf(menuEditVo.getSort()));
+		categoryMenu.setStatus(menuEditVo.getStatus() == 1?true:false);
+		categoryMenu.setMenuType(Integer.valueOf(menuEditVo.getMenuType()));
+		categoryMenu.setCreateTime(new Date());
+		categoryMenuService.save(categoryMenu);
+	}
+
+	@Override
+	public MenuEditVo item(String id) {
+		TCategoryMenu categoryMenu = categoryMenuService.getById(id);
+		if (null == categoryMenu){
+			throw new ServiceException("菜单权限不存在！");
+		}
+		MenuEditVo menuEditVo = MenuEditVo.builder().id(categoryMenu.getUid())
+				.pid(categoryMenu.getParentUid())
+				.name(categoryMenu.getName())
+				.tag(categoryMenu.getTag())
+				.href(categoryMenu.getUrl())
+				.icon(categoryMenu.getIcon())
+				.sort(categoryMenu.getSort().toString())
+				.status(categoryMenu.getStatus() ? 1 : 0)
+				.menuType(categoryMenu.getMenuType().toString()).build();
+		return menuEditVo;
+	}
+
+	@Override
+	public void edit(MenuEditVo menuEditVo) {
+		TCategoryMenu categoryMenu = categoryMenuService.getById(menuEditVo.getId());
+		if (null == categoryMenu){
+			throw new ServiceException("菜单权限不存在！");
+		}
+		categoryMenu.setName(menuEditVo.getName());
+		categoryMenu.setTag(menuEditVo.getTag());
+		categoryMenu.setUrl(menuEditVo.getHref());
+		categoryMenu.setIcon(menuEditVo.getIcon());
+		categoryMenu.setSort(Integer.valueOf(menuEditVo.getSort()));
+		categoryMenu.setStatus(menuEditVo.getStatus() == 1?true:false);
+		categoryMenu.setMenuType(Integer.valueOf(menuEditVo.getMenuType()));
+		categoryMenu.setUpdateTime(new Date());
+		categoryMenuService.updateById(categoryMenu);
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public Boolean del(String id) {
+		List<TCategoryMenu> categoryMenuList = categoryMenuService.list(new QueryWrapper<TCategoryMenu>().eq("parent_uid", id));
+		List<String> idList = categoryMenuList.stream().map(categoryMenu -> categoryMenu.getUid()).collect(Collectors.toList());
+		idList.add(id);
+		List<TRole> roleList = roleService.list(new QueryWrapper<TRole>());
+		roleList.forEach(role ->{
+			String categoryMenuUids = role.getCategoryMenuUids();
+			if (StringUtils.isNotEmpty(categoryMenuUids)){
+				ArrayList<String> list = (ArrayList<String>) JsonUtils.jsonArrayToArrayList(categoryMenuUids);
+				list.forEach(l ->{
+					if (idList.contains(l)){
+						throw new ServiceException("删除失败，当前菜单下有角色绑定，角色为：<font color='red'>"+role.getRoleName()+"</font>，请先手动解绑再进行删除操作！");
+					}
+				});
+			}
+		});
+		return categoryMenuService.removeByIds(idList);
 	}
 }
