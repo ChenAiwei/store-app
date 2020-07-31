@@ -1,7 +1,9 @@
 package com.boot.store.filter;
 
+import com.boot.store.entity.TUser;
 import com.boot.store.exception.PermissionException;
 import com.boot.store.exception.TokenException;
+import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.EhcacheUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -39,6 +41,9 @@ public class PermissionFilter implements Filter {
 	@Autowired
 	EhcacheUtil cacheUtil;
 
+	@Autowired
+	private ITUserService userService;
+
 	private static final Set<String> ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
 			Arrays.asList("/verify/getCode/blend", "/verify/getCode/number","/login", "/logout", "/register")));
 
@@ -67,6 +72,11 @@ public class PermissionFilter implements Filter {
 				resolver.resolveException(request, response, null, new TokenException("token用户信息验证失败，请重新登录！"));
 				return;
 			}
+			TUser user = userService.getById(userId);
+			if (null == user || !user.getStatus()){
+				resolver.resolveException(request, response, null, new TokenException("非法用户！用户不存在或者已禁用！"));
+				return;
+			}
 			/*if (!ALLOWED_PATHS.contains(path)) {
 				resolver.resolveException(request, response, null, new PermissionException("请求的URl没有权限！"));
 				return;
@@ -75,6 +85,7 @@ public class PermissionFilter implements Filter {
 		}
 		filterChain.doFilter(request, response);
 	}
+
 
 	@Override
 	public void destroy() {
