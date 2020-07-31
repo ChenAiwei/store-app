@@ -48,8 +48,7 @@ public class PermissionFilter implements Filter {
 			Arrays.asList("/verify/getCode/blend", "/verify/getCode/number","/login", "/logout", "/register")));
 
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-	}
+	public void init(FilterConfig filterConfig) throws ServletException {}
 
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException, PermissionException {
