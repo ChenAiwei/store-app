@@ -16,7 +16,6 @@ import com.boot.store.mapper.TRoleMapper;
 import com.boot.store.service.system.ITCategoryMenuService;
 import com.boot.store.service.system.ITRoleService;
 import com.boot.store.service.system.ITUserRoleService;
-import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.JsonUtils;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
@@ -27,6 +26,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,8 +46,6 @@ public class TRoleServiceImpl extends ServiceImpl<TRoleMapper, TRole> implements
 
 	@Autowired
 	private ITUserRoleService userRoleService;
-	@Autowired
-	private ITUserService userService;
 	@Autowired
 	private ITCategoryMenuService categoryMenuService;
 
@@ -79,7 +77,7 @@ public class TRoleServiceImpl extends ServiceImpl<TRoleMapper, TRole> implements
 			return;
 		}
 		List<String> userIdList = role.getUserRoleInfoDtoList().stream().map(e -> e.getUserId()).collect(Collectors.toList());
-		Collection<TUser> userCollection = userService.listByIds(userIdList);
+		Collection<TUser> userCollection = userRoleService.getUserService().listByIds(userIdList);
 		List<TUserRole> insertList = new ArrayList<>();
 		userCollection.forEach(user ->{
 			TUserRole tUserRole = new TUserRole();
@@ -144,7 +142,7 @@ public class TRoleServiceImpl extends ServiceImpl<TRoleMapper, TRole> implements
 		List<TUserRole> userRoleList = userRoleService.list(new QueryWrapper<TUserRole>().eq("role_id", roleId));
 		if (CollectionUtils.isNotEmpty(userRoleList)){
 			List<String> userIdList = userRoleList.stream().map(e -> e.getUserId()).collect(Collectors.toList());
-			Collection<TUser> userCollection = userService.listByIds(userIdList);
+			Collection<TUser> userCollection = userRoleService.getUserService().listByIds(userIdList);
 			userCollection.forEach(user ->{
 				userRoleInfoDtoList.add(new UserRoleInfoDto(roleId,user.getUid(),user.getUserName()));
 			});

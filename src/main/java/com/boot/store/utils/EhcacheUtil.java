@@ -84,4 +84,13 @@ public class EhcacheUtil {
 		return (String) element.getObjectValue();
 	}
 
+	public void remove(String key){
+		Cache cache = cacheManager.getCache(StoreConst.PROJECT);
+		Element element = new Element(
+				key, "",
+				0,
+				0);
+		cache.put(element);
+	}
+
 }

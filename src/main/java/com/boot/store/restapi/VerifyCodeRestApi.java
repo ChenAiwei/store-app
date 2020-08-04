@@ -1,4 +1,4 @@
-package com.boot.store.controller;
+package com.boot.store.restapi;
 
 import com.boot.store.dto.VerifyCodeDto;
 import com.boot.store.utils.EhcacheUtil;
@@ -16,12 +16,12 @@ import java.util.concurrent.Semaphore;
 
 /**
  * @Author：chenaiwei
- * @Description：VerifyCodeController
+ * @Description：VerifyCodeRestApi
  * @CreateDate：2020/7/8 16:28
  */
 @RestController
 @RequestMapping("/verify")
-public class VerifyCodeController {
+public class VerifyCodeRestApi {
 	private Semaphore semaphore=new Semaphore(1);
 	@Autowired
 	EhcacheUtil cacheUtil;

@@ -11,6 +11,7 @@ public enum ResultEnum {
     TypeMismatchException(401,"Request parameter Type not match"),
     RequestMethodNotAllowed(405,"Request method not Allowed"),
     InterfaceNotExist(404,"Interface does not exist"),
+	DbReadOnlyException(-1,"演示环境只能进行读操作！"),
     ;
 
     private Integer code;

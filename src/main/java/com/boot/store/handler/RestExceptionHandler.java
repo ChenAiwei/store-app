@@ -1,5 +1,6 @@
 package com.boot.store.handler;
 
+import com.boot.store.consts.StoreConst;
 import com.boot.store.enums.ResultEnum;
 import com.boot.store.exception.PermissionException;
 import com.boot.store.exception.ServiceException;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 /**
  * @author aiwei
@@ -126,6 +128,7 @@ public class RestExceptionHandler {
 		log.error("404接口不存在:【" + e.getMessage() + "】");
 		return ResultVoUtil.error(ResultEnum.InterfaceNotExist);
 	}
+
     /**
      * 处理其他异常
      *
@@ -136,7 +139,10 @@ public class RestExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public ResultVo<String> exceptionHandler(HttpServletRequest req, Exception e) {
-        log.error("发生异常！原因是:", e);
+		log.error("发生异常！原因是:", e);
+		if (e.getCause().getMessage().contains(StoreConst.DB_READ_ONLY)){
+			return ResultVoUtil.error(ResultEnum.DbReadOnlyException);
+		}
         if (PRO_FILE_STR.equals(profiles)) {
             return ResultVoUtil.error("系统异常");
         }

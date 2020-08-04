@@ -1,4 +1,4 @@
-package com.boot.store.controller;
+package com.boot.store.restapi;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.boot.store.dto.RegisterDto;
@@ -20,11 +20,11 @@ import java.util.Date;
 
 /**
  * @Author：chenaiwei
- * @Description：RegisertController
+ * @Description：RegisterRestApi
  * @CreateDate：2020/7/9 8:52
  */
 @RestController
-public class RegisterController {
+public class RegisterRestApi {
 
 	@Autowired
 	private ITUserService userService;

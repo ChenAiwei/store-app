@@ -13,7 +13,6 @@ import com.boot.store.entity.TUser;
 import com.boot.store.entity.TUserRole;
 import com.boot.store.exception.ServiceException;
 import com.boot.store.mapper.TUserMapper;
-import com.boot.store.service.system.ITRoleService;
 import com.boot.store.service.system.ITUserRoleService;
 import com.boot.store.service.system.ITUserService;
 import com.boot.store.utils.MD5Util;
@@ -27,6 +26,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,8 +48,6 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
 	@Autowired
 	private ITUserRoleService userRoleService;
-	@Autowired
-	private ITRoleService roleService;
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
@@ -153,7 +151,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		}
 		IPage<TUser> resultPage = this.page(new Page<>(page,limit),queryWrapper);
 		List<String> uidLists = resultPage.getRecords().stream().map(u -> u.getUid()).collect(Collectors.toList());
-		Map<String,RoleNameDto> roleNameMap= roleService.getNameByUserIdList(uidLists);
+		Map<String,RoleNameDto> roleNameMap= userRoleService.getRoleService().getNameByUserIdList(uidLists);
 		resultPage.getRecords().forEach(user ->{
 			UserVo userVo = UserVo.builder().id(user.getUid())
 					.userName(user.getUserName())
@@ -190,7 +188,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		userEditVo.setStatus(user.getStatus()?"1":"0");
 		userEditVo.setUserName(user.getUserName());
 		List<RoleNameInfoVo> roleList = new ArrayList<>();
-		List<TRole> tRoleList = roleService.list(new QueryWrapper<>());
+		List<TRole> tRoleList = userRoleService.getRoleService().list(new QueryWrapper<>());
 		List<RoleUserInfoDto> roleUserList = this.getRoleUserList(id);
 		List<String> roleIdList = roleUserList.stream().map(e -> e.getRoleId()).collect(Collectors.toList());
 		tRoleList.forEach(role ->{
@@ -219,7 +217,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		List<TUserRole> userRoleList = userRoleService.list(new QueryWrapper<TUserRole>().eq("user_id", userId));
 		if (CollectionUtils.isNotEmpty(userRoleList)){
 			List<String> roleIdList = userRoleList.stream().map(e -> e.getRoleId()).collect(Collectors.toList());
-			Collection<TRole> roleCollection = roleService.listByIds(roleIdList);
+			Collection<TRole> roleCollection = userRoleService.getRoleService().listByIds(roleIdList);
 			roleCollection.forEach(role ->{
 				roleUserInfoDtoList.add(new RoleUserInfoDto(userId,role.getUid(),role.getRoleName()));
 			});

@@ -1,4 +1,4 @@
-package com.boot.store.controller;
+package com.boot.store.restapi;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.boot.store.dto.LoginDto;
@@ -11,9 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -22,12 +20,12 @@ import java.util.Date;
 
 /**
  * @Author：chenaiwei
- * @Description：LoginController
+ * @Description：LoginRestApi
  * @CreateDate：2020/7/9 17:02
  */
 @RestController
 @Slf4j
-public class LoginController {
+public class LoginRestApi {
 
 	@Autowired
 	private ITUserService userService;
@@ -67,5 +65,10 @@ public class LoginController {
 		return ResultVoUtil.success(tokenDto);
 	}
 
-
+	@GetMapping("/logout/{userId}")
+	public ResultVo<?> logout(@PathVariable String userId){
+		cacheUtil.remove(userId);
+		log.info("用户{}登出成功",userId);
+		return ResultVoUtil.success();
+	}
 }

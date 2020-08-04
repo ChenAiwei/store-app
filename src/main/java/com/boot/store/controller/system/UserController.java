@@ -72,6 +72,7 @@ public class UserController {
 	}
 
 	@PostMapping("/userStatus")
+	@Log(option = "更改用户状态",type = LogEnum.EDIT)
 	public ResultVo<?> userStatus(@Validated @RequestBody UserStatusVo userStatusVo){
 		userService.userStatus(userStatusVo);
 		return ResultVoUtil.success();

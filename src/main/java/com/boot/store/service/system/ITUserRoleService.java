@@ -12,5 +12,15 @@ import com.boot.store.entity.TUserRole;
  * @since 2020-04-02
  */
 public interface ITUserRoleService extends IService<TUserRole> {
+	/**
+	 * 获取ITUserService
+	 * @return
+	 */
+	ITUserService getUserService();
 
+	/**
+	 * 获取ITRoleService
+	 * @return
+	 */
+	ITRoleService getRoleService();
 }
