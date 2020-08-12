@@ -59,7 +59,7 @@ public class LoginRestApi {
 		tUser.setLastLoginIp(IpUtil.getIpAddress(request));
 		tUser.updateById();
 		String token = UUIDUtils.genToken(tUser.getUid());
-		UserTokenDto tokenDto = new UserTokenDto(tUser.getUid(),token);
+		UserTokenDto tokenDto = new UserTokenDto(tUser.getUid(),tUser.getUserName(),tUser.getAvatar(),token);
 		cacheUtil.set(tUser.getUid(),token,60*60);
 		log.info("用户{}登录成功,保存token："+token,tUser.getUserName());
 		return ResultVoUtil.success(tokenDto);
