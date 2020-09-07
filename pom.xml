@@ -15,7 +15,7 @@
         <java.version>1.8</java.version>
         <tomcat-embed-core.version>9.0.24</tomcat-embed-core.version>
         <alibaba-druid.version>1.1.9</alibaba-druid.version>
-        <mysql-connector.vsersion>8.0.15</mysql-connector.vsersion>
+        <mysql-connector.vsersion>8.0.16</mysql-connector.vsersion>
         <mybatis-plus-boot-starter.version>3.0-RC3</mybatis-plus-boot-starter.version>
         <jackson-databind.version>2.9.9.3</jackson-databind.version>
         <log4j.version>1.2.17</log4j.version>
