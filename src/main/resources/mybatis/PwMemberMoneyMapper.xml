@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.PwMemberMoneyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.boot.store.entity.PwMemberMoney">
+        <id column="id" property="id" />
+        <result column="order_num" property="orderNum" />
+        <result column="member_id" property="memberId" />
+        <result column="balance" property="balance" />
+        <result column="before_balance" property="beforeBalance" />
+        <result column="type" property="type" />
+        <result column="quota" property="quota" />
+        <result column="act_quota" property="actQuota" />
+        <result column="pay_type" property="payType" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_num, member_id, balance, before_balance, type, quota, act_quota, pay_type, remark, create_time
+    </sql>
+
+    <select id="queryRecord" resultType="com.boot.store.dto.member.PwMemberMoneyDto">
+        SELECT
+            money.id,
+            money.order_num as orderNum,
+            member.`name` as memberName,
+            money.member_id as memberId,
+            money.balance,
+            money.before_balance as beforeBalance,
+            money.type,
+            money.quota,
+            money.act_quota as actQuota,
+            money.pay_type as payType,
+            money.remark,
+            money.create_time  as createTime
+        FROM
+            pw_member_money money
+        LEFT JOIN
+            pw_member member ON money.member_id = member.id
+        where 1=1
+        <if test="id != null and id != '' and id != 'undefined' ">
+            and money.member_id = #{id}
+        </if>
+        <if test="memberName != null and memberName != ''">
+            and member.name = #{memberName}
+            or  member.phone = #{memberName}
+        </if>
+        <if test="type != null and type != ''">
+            and money.type = #{type}
+        </if>
+        <if test="startTime != null and startTime != ''">
+            and money.create_time &gt;= #{startTime}
+        </if>
+        <if test="endTime != null and endTime != ''">
+            and money.create_time &lt;= #{endTime}
+        </if>
+        ORDER BY money.create_time desc
+        LIMIT #{page},#{limit}
+    </select>
+
+    <select id="queryRecordCount" resultType="java.lang.Long">
+        SELECT
+            count(*)
+        FROM
+            pw_member_money money
+        LEFT JOIN
+            pw_member member ON money.member_id = member.id
+        where 1=1
+        <if test="id != null and id != ''and id != 'undefined'">
+            and money.member_id = #{id}
+        </if>
+        <if test="memberName != null and memberName != ''">
+            and member.name = #{memberName}
+            or  member.phone = #{memberName}
+        </if>
+        <if test="type != null and type != ''">
+            and money.type = #{type}
+        </if>
+        <if test="startTime != null and startTime != ''">
+            and money.create_time &gt;= #{startTime}
+        </if>
+        <if test="endTime != null and endTime != ''">
+            and money.create_time &lt;= #{endTime}
+        </if>
+    </select>
+
+</mapper>

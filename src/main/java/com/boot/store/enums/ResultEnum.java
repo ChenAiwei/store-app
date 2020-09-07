@@ -10,7 +10,7 @@ public enum ResultEnum {
     RequestBodyEmpty(400,"RequestBody Not Allow Empty"),
     TypeMismatchException(401,"Request parameter Type not match"),
     RequestMethodNotAllowed(405,"Request method not Allowed"),
-    InterfaceNotExist(404,"Interface does not exist"),
+    InterfaceNotExist(404,"接口不存在！"),
 	DbReadOnlyException(-1,"演示环境只能进行读操作！"),
     ;
 

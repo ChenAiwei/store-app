@@ -32,4 +32,12 @@ public class UUIDUtils {
 		String end =  IdUtil.simpleUUID().substring(0, 8);
 		return start+MD5Util.getEncryptedPwd(uid)+end;
 	}
+
+	public static String genOrder(){
+		synchronized (UUIDUtils.class){
+			String timeMillis = String.valueOf(System.currentTimeMillis());
+			String end = timeMillis.substring(timeMillis.length() - 4, timeMillis.length()-1);
+			return timeMillis+end;
+		}
+	}
 }

@@ -87,7 +87,7 @@ public class RoleController {
 	}
 
 	@GetMapping("/listRole")
-	public ResultVo<List<RoleVo>> listRole(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit, String startTime, String endTime, String roleName){
+	public ResultVo<PageVo<RoleVo>> listRole(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit, String startTime, String endTime, String roleName){
 		PageVo<RoleVo> roleVoPageVo = roleService.listRole(page, limit, startTime, endTime, roleName);
 		return ResultVoUtil.success(roleVoPageVo);
 	}
