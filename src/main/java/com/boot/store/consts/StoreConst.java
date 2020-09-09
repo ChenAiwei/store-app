@@ -19,4 +19,9 @@ public class StoreConst implements Serializable {
 	public static final Integer MEMBER_MONEY_CHARGE = 1;
 	public static final Integer MEMBER_MONEY_CONSUME = 2;
 
+	public static final Integer PURCHASE_SELL = 1;
+	public static final Integer PURCHASE_INTO = 2;
+
+
+
 }

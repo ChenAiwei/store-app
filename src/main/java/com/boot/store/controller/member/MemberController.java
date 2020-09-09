@@ -62,7 +62,7 @@ public class MemberController {
 
 	@Log(option = "会员编辑",type = LogEnum.EDIT)
 	@PostMapping("/editMember")
-	public ResultVo<?> editMember(@RequestBody @Validated(ValidationGroups.Register.class)MemberVo memberVo){
+	public ResultVo<?> editMember(@RequestBody @Validated(ValidationGroups.Editer.class)MemberVo memberVo){
 		PwMember pwMember = memberService.getById(memberVo.getId());
 		if (pwMember == null){
 			throw new ServiceException("会员不存在！");
@@ -100,7 +100,7 @@ public class MemberController {
 		if (StringUtils.isBlank(id)){
 			throw new ServiceException("会员不存在！");
 		}
-		memberService.removeById(Long.valueOf(id));
+		memberService.deleteById(Long.valueOf(id));
 		return ResultVoUtil.success();
 	}
 

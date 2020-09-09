@@ -80,7 +80,7 @@ public class PermissionFilter implements Filter {
 				resolver.resolveException(request, response, null, new PermissionException("请求的URl没有权限！"));
 				return;
 			}*/
-			cacheUtil.set(userId, token, 60 * 60);
+			cacheUtil.set(userId, token, 60 * 60*12);
 		}
 		filterChain.doFilter(request, response);
 	}

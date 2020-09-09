@@ -26,7 +26,7 @@
         SELECT
             money.id,
             money.order_num as orderNum,
-            member.`name` as memberName,
+            if(member.deleted = 0,member.`name`,CONCAT(member.`name`,'(已删除)')) as memberName,
             money.member_id as memberId,
             money.balance,
             money.before_balance as beforeBalance,

@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -18,13 +19,13 @@ import java.util.Date;
  * </p>
  *
  * @author auto
- * @since 2020-09-01
+ * @since 2020-09-09
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("pw_member")
-public class PwMember extends Model<PwMember> {
+@TableName("pw_purchase_sales")
+public class PwPurchaseSales extends Model<PwPurchaseSales> {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,42 +33,54 @@ public class PwMember extends Model<PwMember> {
     private Long id;
 
     /**
-     * 会员名
+     * 订单号
      */
-    private String name;
+    @TableField("order_num")
+    private String orderNum;
 
     /**
-     * 性别
+     * 商品ID
      */
-    private Integer sex;
+    @TableField("commodity_id")
+    private Long commodityId;
 
     /**
-     * 手机号码
+     * 数量
      */
-    private String phone;
+    private Integer count;
+
 
     /**
-     * 余额
+     * 渠道ID
      */
-    private Double balance;
+    @TableField("channel_id")
+    private Long channelId;
 
     /**
-     * 0 过期 1正常
+     * 会员ID
      */
-    private Integer status;
+    @TableField("member_id")
+    private Long memberId;
 
-    @TableField("create_time")
-    private Date createTime;
+    /**
+     * 额度
+     */
+    private BigDecimal quota;
 
-    @TableField("update_time")
-    private Date updateTime;
+    /**
+     * 1会员 2普通客户
+     */
+    @TableField("consumer_type")
+    private Integer consumerType;
 
     /**
      * 备注
      */
     private String remark;
 
-    private Integer deleted;
+    @TableField("create_time")
+    private Date createTime;
+
 
     @Override
     protected Serializable pkVal() {

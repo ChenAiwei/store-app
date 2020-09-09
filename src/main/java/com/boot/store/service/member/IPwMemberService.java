@@ -28,4 +28,10 @@ public interface IPwMemberService extends IService<PwMember> {
 	 * @return
 	 */
 	PageVo<MemberVo> listMember(Integer page, Integer limit, String name, String phone);
+
+	/**
+	 * 逻辑删除
+	 * @param id
+	 */
+	void deleteById(Long id);
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.PwCommodityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.boot.store.entity.PwCommodity">
+        <id column="id" property="id" />
+        <result column="commodity_num" property="commodityNum" />
+        <result column="name" property="name" />
+        <result column="picture" property="picture" />
+        <result column="count" property="count" />
+        <result column="purchase_price" property="purchasePrice" />
+        <result column="sell_price" property="sellPrice" />
+        <result column="channel_id" property="channelId" />
+        <result column="commodity_type_id" property="commodityTypeId" />
+        <result column="status" property="status" />
+        <result column="discount" property="discount" />
+        <result column="discount_rate" property="discountRate" />
+        <result column="promotion" property="promotion" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, commodity_num, name, picture, count, purchase_price, sell_price, channel_id, commodity_type_id, status, discount, discount_rate, promotion, remark, create_time, update_time,deleted
+    </sql>
+
+    <select id="list" resultType="com.boot.store.dto.commodity.CommodityDto">
+        SELECT
+            commodity.id as id,
+            commodity.name,
+            commodity.commodity_num as commodityNum,
+            commodity.picture,
+            commodity.count,
+            commodity.purchase_price as purchasePrice,
+            commodity.sell_price as sellPrice,
+            commodity.channel_id as channelId,
+            commodity.commodity_type_id as commodityTypeId,
+            commodity.`status`,
+            commodity.discount,
+            commodity.discount_rate as discountRate,
+            commodity.promotion,
+            commodity.remark,
+            commodity.create_time as createTime,
+            commodity.update_time as updateTime,
+            channel.channel_name as channelName,
+            type.name as commodityTypeName
+        FROM pw_commodity commodity LEFT JOIN pw_channel channel on commodity.channel_id = channel.id
+        LEFT JOIN pw_commodity_type type on commodity.commodity_type_id = type.id
+        WHERE 1=1 AND commodity.deleted = 0
+        <if test="name != null and name != '' ">
+            and commodity.name like concat('%','${name}','%')
+        </if>
+        <if test="channelId != null and channelId != '' ">
+            and commodity.channel_id = #{channelId}
+        </if>
+        <if test="commodityTypeId != null and commodityTypeId != '' ">
+            and commodity.commodity_type_id = #{commodityTypeId}
+        </if>
+        ORDER BY commodity.create_time desc
+        LIMIT #{page},#{limit}
+    </select>
+
+    <select id="count" resultType="java.lang.Long">
+        SELECT
+            count(*)
+        FROM pw_commodity commodity LEFT JOIN pw_channel channel on commodity.channel_id = channel.id
+        LEFT JOIN pw_commodity_type type on commodity.commodity_type_id = type.id
+        WHERE 1=1 AND commodity.deleted = 0
+        <if test="name != null and name != '' ">
+            and commodity.name like concat('%','${name}','%')
+        </if>
+        <if test="channelId != null and channelId != '' ">
+            and commodity.channel_id = #{channelId}
+        </if>
+        <if test="commodityTypeId != null and commodityTypeId != '' ">
+            and commodity.commodity_type_id = #{commodityTypeId}
+        </if>
+    </select>
+
+</mapper>

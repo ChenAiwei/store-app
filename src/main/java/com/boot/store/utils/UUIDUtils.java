@@ -40,4 +40,12 @@ public class UUIDUtils {
 			return timeMillis+end;
 		}
 	}
+
+	public static String genProductId(){
+		synchronized (UUIDUtils.class){
+			String timeMillis = String.valueOf(System.currentTimeMillis());
+			String end = timeMillis.substring(0, timeMillis.length()-8)+timeMillis.substring(timeMillis.length() - 4, timeMillis.length()-1);;
+			return "PD"+end;
+		}
+	}
 }

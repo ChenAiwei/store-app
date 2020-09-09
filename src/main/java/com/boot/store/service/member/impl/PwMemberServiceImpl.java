@@ -32,13 +32,12 @@ import java.util.List;
 public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> implements IPwMemberService {
 
 	@Autowired
-	@Lazy
 	private IPwMemberMoneyService memberMoneyService;
 
 	@Override
 	public PageVo<MemberVo> listMember(Integer page, Integer limit, String name, String phone) {
 		List<MemberVo> list = new ArrayList<>();
-		QueryWrapper<PwMember> queryWrapper = new QueryWrapper<PwMember>().orderByDesc("update_time");
+		QueryWrapper<PwMember> queryWrapper = new QueryWrapper<PwMember>().eq("deleted",0).orderByDesc("update_time");
 		if (StringUtils.isNotEmpty(name)){
 			queryWrapper.eq("name",name);
 		}
@@ -59,5 +58,12 @@ public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> i
 			list.add(memberVo);
 		});
 		return new PageVo<>(resultPage.getTotal(),list);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		PwMember pwMember = this.getById(id);
+		pwMember.setDeleted(1);
+		this.updateById(pwMember);
 	}
 }
