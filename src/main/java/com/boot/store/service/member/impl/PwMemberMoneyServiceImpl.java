@@ -1,26 +1,16 @@
 package com.boot.store.service.member.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.boot.store.consts.StoreConst;
 import com.boot.store.dto.member.PwMemberMoneyDto;
-import com.boot.store.entity.PwMember;
 import com.boot.store.entity.PwMemberMoney;
-import com.boot.store.exception.ServiceException;
 import com.boot.store.mapper.PwMemberMoneyMapper;
 import com.boot.store.service.member.IPwMemberMoneyService;
-import com.boot.store.service.member.IPwMemberService;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
-import com.boot.store.vo.member.MemberChargeVo;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.boot.store.dto.member.MemberChargeDto;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,17 +26,17 @@ import java.util.List;
 public class PwMemberMoneyServiceImpl extends ServiceImpl<PwMemberMoneyMapper, PwMemberMoney> implements IPwMemberMoneyService {
 
 	@Override
-	public Boolean charge(MemberChargeVo memberChargeVo,Double beforeBalance,Double balance) {
+	public Boolean charge(MemberChargeDto memberChargeDto, Double beforeBalance, Double balance) {
 		PwMemberMoney memberMoney = new PwMemberMoney();
 		memberMoney.setOrderNum(UUIDUtils.genOrder());
-		memberMoney.setMemberId(memberChargeVo.getId());
+		memberMoney.setMemberId(memberChargeDto.getId());
 		memberMoney.setBeforeBalance(beforeBalance);
 		memberMoney.setBalance(balance);
-		memberMoney.setQuota(memberChargeVo.getQuota());
-		memberMoney.setActQuota(memberChargeVo.getActQuota());
+		memberMoney.setQuota(memberChargeDto.getQuota());
+		memberMoney.setActQuota(memberChargeDto.getActQuota());
 		memberMoney.setType(StoreConst.MEMBER_MONEY_CHARGE);
-		memberMoney.setPayType(memberChargeVo.getPayType());
-		memberMoney.setRemark(memberChargeVo.getChargeRemark());
+		memberMoney.setPayType(memberChargeDto.getPayType());
+		memberMoney.setRemark(memberChargeDto.getChargeRemark());
 		memberMoney.setCreateTime(new Date());
 		return this.save(memberMoney);
 	}

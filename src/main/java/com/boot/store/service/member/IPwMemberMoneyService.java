@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.dto.member.PwMemberMoneyDto;
 import com.boot.store.entity.PwMemberMoney;
 import com.boot.store.vo.PageVo;
-import com.boot.store.vo.member.MemberChargeVo;
+import com.boot.store.dto.member.MemberChargeDto;
 
 /**
  * <p>
@@ -18,12 +18,12 @@ public interface IPwMemberMoneyService extends IService<PwMemberMoney> {
 
 	/**
 	 * 会员充值
-	 * @param memberChargeVo
+	 * @param memberChargeDto
 	 * @param beforeBalance
 	 * @param balance
 	 * @return
 	 */
-	Boolean charge(MemberChargeVo memberChargeVo,Double beforeBalance,Double balance);
+	Boolean charge(MemberChargeDto memberChargeDto, Double beforeBalance, Double balance);
 
 	/**
 	 *  账单列表

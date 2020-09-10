@@ -1,13 +1,9 @@
 package com.boot.store.service.member;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.entity.PwMember;
 import com.boot.store.vo.PageVo;
-import com.boot.store.vo.ResultVo;
-import com.boot.store.vo.member.MemberVo;
-
-import java.util.List;
+import com.boot.store.dto.member.MemberDto;
 
 /**
  * <p>
@@ -27,7 +23,7 @@ public interface IPwMemberService extends IService<PwMember> {
 	 * @param phone
 	 * @return
 	 */
-	PageVo<MemberVo> listMember(Integer page, Integer limit, String name, String phone);
+	PageVo<MemberDto> listMember(Integer page, Integer limit, String name, String phone);
 
 	/**
 	 * 逻辑删除

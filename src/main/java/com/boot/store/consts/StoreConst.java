@@ -22,6 +22,8 @@ public class StoreConst implements Serializable {
 	public static final Integer PURCHASE_SELL = 1;
 	public static final Integer PURCHASE_INTO = 2;
 
+	public static final Integer STOCK_ADD = 1;
+	public static final Integer STOCK_SUB = 2;
 
 
 }

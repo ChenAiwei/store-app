@@ -11,10 +11,9 @@ import com.boot.store.mapper.PwMemberMapper;
 import com.boot.store.service.member.IPwMemberMoneyService;
 import com.boot.store.service.member.IPwMemberService;
 import com.boot.store.vo.PageVo;
-import com.boot.store.vo.member.MemberVo;
+import com.boot.store.dto.member.MemberDto;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -35,8 +34,8 @@ public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> i
 	private IPwMemberMoneyService memberMoneyService;
 
 	@Override
-	public PageVo<MemberVo> listMember(Integer page, Integer limit, String name, String phone) {
-		List<MemberVo> list = new ArrayList<>();
+	public PageVo<MemberDto> listMember(Integer page, Integer limit, String name, String phone) {
+		List<MemberDto> list = new ArrayList<>();
 		QueryWrapper<PwMember> queryWrapper = new QueryWrapper<PwMember>().eq("deleted",0).orderByDesc("update_time");
 		if (StringUtils.isNotEmpty(name)){
 			queryWrapper.eq("name",name);
@@ -47,7 +46,7 @@ public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> i
 		IPage<PwMember> resultPage = this.page(new Page<>(page,limit),queryWrapper);
 		resultPage.getRecords().forEach(record ->{
 			List<PwMemberMoney> moneyList = memberMoneyService.list(new QueryWrapper<PwMemberMoney>().eq("member_id", record.getId()));
-			MemberVo memberVo = MemberVo.builder().id(record.getId())
+			MemberDto memberDto = MemberDto.builder().id(record.getId())
 					.name(record.getName())
 					.phone(record.getPhone())
 					.balance(record.getBalance())
@@ -55,7 +54,7 @@ public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> i
 					.createTime(DateUtil.formatDateTime(record.getCreateTime()))
 					.recordSize(moneyList.size())
 					.remark(record.getRemark()).build();
-			list.add(memberVo);
+			list.add(memberDto);
 		});
 		return new PageVo<>(resultPage.getTotal(),list);
 	}

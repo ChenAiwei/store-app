@@ -112,9 +112,16 @@ public class CommodityDto implements Serializable {
 
     private String commodityTypeName;
 
+    private Integer sellCount;
+
+    private Integer stockCount;
+
     private List<XmSelectModelDto> typeList;
 
 	private List<XmSelectModelDto> channelList;
+
+	private List<XmSelectModelDto> memberList;
+
 
 
 }

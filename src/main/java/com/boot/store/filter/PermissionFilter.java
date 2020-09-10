@@ -1,5 +1,6 @@
 package com.boot.store.filter;
 
+import com.boot.store.context.UserContextHolder;
 import com.boot.store.entity.TUser;
 import com.boot.store.exception.PermissionException;
 import com.boot.store.exception.TokenException;
@@ -76,6 +77,7 @@ public class PermissionFilter implements Filter {
 				resolver.resolveException(request, response, null, new TokenException("非法用户！用户不存在或者已禁用！"));
 				return;
 			}
+			UserContextHolder.set(user);
 			/*if (!ALLOWED_PATHS.contains(path)) {
 				resolver.resolveException(request, response, null, new PermissionException("请求的URl没有权限！"));
 				return;
@@ -88,6 +90,6 @@ public class PermissionFilter implements Filter {
 
 	@Override
 	public void destroy() {
-
+		UserContextHolder.shutdown();
 	}
 }
