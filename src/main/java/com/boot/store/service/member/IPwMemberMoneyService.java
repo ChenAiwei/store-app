@@ -6,6 +6,8 @@ import com.boot.store.entity.PwMemberMoney;
 import com.boot.store.vo.PageVo;
 import com.boot.store.dto.member.MemberChargeDto;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  *  服务类
@@ -37,4 +39,13 @@ public interface IPwMemberMoneyService extends IService<PwMemberMoney> {
 	 * @return
 	 */
 	PageVo<PwMemberMoneyDto> queryRecord(Integer page, Integer limit, String id, String type,String memberName, String startTime, String endTime);
+
+	/**
+	 * 会员扣费
+     * @param id
+     * @param money
+     * @param sellRemark
+     * @param payType
+     */
+	void deduction(Long id, BigDecimal money, String sellRemark, Integer payType);
 }

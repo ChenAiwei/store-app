@@ -16,6 +16,7 @@ import com.boot.store.service.channel.IPwChannelService;
 import com.boot.store.service.commodity.IPwCommodityService;
 import com.boot.store.service.commodity.IPwPurchaseSalesService;
 import com.boot.store.service.commodity.IPwStockRecordService;
+import com.boot.store.service.member.IPwMemberMoneyService;
 import com.boot.store.service.member.IPwMemberService;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
@@ -49,6 +50,8 @@ public class PwCommodityServiceImpl extends ServiceImpl<PwCommodityMapper, PwCom
 	private IPwStockRecordService stockRecordService;
 	@Autowired
 	private IPwChannelService channelService;
+	@Autowired
+	private IPwMemberMoneyService memberMoneyService;
 
 	@Override
 	public PageVo<CommodityDto> list(Integer page, Integer limit, String name, String channelId, String commodityTypeId) {
@@ -157,7 +160,7 @@ public class PwCommodityServiceImpl extends ServiceImpl<PwCommodityMapper, PwCom
 			throw new ServiceException("会员不存在！");
 		}
 		PwChannel channel = channelService.getById(commoditySellDto.getChannelId());
-		if (null == channel){
+		if (null == channel || channel.getDeleted() == 1){
 			throw new ServiceException("渠道不存在！");
 		}
 		//已经售出的数量
@@ -189,12 +192,14 @@ public class PwCommodityServiceImpl extends ServiceImpl<PwCommodityMapper, PwCom
 		if (commoditySellDto.getVip() == 1){
 			purchaseSales.setMemberId(Long.valueOf(commoditySellDto.getMemberId()));
 			purchaseSales.setConsumerType(1);
+			//产生会员扣费记录
+			memberMoneyService.deduction(Long.valueOf(commoditySellDto.getMemberId()),money,commoditySellDto.getSellRemark(),commoditySellDto.getPayType());
 		}else {
 			purchaseSales.setConsumerType(2);
 		}
 		purchaseSales.setQuota(quota);
 		purchaseSales.setCreateTime(new Date());
 		purchaseSales.setRemark(commoditySellDto.getSellRemark());
-
+		purchaseSalesService.save(purchaseSales);
 	}
 }
