@@ -24,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +86,7 @@ public class MemberController {
 		MemberDto memberDto = MemberDto.builder().id(pwMember.getId())
 				.name(pwMember.getName())
 				.phone(pwMember.getPhone())
-				.balance(pwMember.getBalance())
+				.balance(pwMember.getBalance().toString())
 				.status(pwMember.getStatus())
 				.sex(pwMember.getSex())
 				.createTime(DateUtil.formatDateTime(pwMember.getCreateTime()))
@@ -112,8 +113,8 @@ public class MemberController {
 		if (pwMember == null){
 			throw new ServiceException("会员不存在！");
 		}
-		Double beforeBalance = pwMember.getBalance();
-		pwMember.setBalance(beforeBalance+Double.valueOf(memberChargeDto.getActQuota()));
+		BigDecimal beforeBalance = pwMember.getBalance();
+		pwMember.setBalance(beforeBalance.add(new BigDecimal(memberChargeDto.getActQuota())));
 		Boolean update = memberService.updateById(pwMember);
 		Boolean charge = memberMoneyService.charge(memberChargeDto,beforeBalance,pwMember.getBalance());
 		if (update && charge){

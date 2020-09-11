@@ -24,6 +24,4 @@ public class CommoditySellDto implements Serializable {
 	@NotNull(message = "vip标识符不允许为空")
 	private Integer vip;
 	private String memberId;
-	@NotNull(message = "channelId不允许为空")
-	private String channelId;
 }

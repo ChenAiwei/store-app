@@ -3,6 +3,7 @@ package com.boot.store.service.commodity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.dto.commodity.CommodityDto;
 import com.boot.store.dto.commodity.CommoditySellDto;
+import com.boot.store.dto.commodity.CommoditySellRecordDto;
 import com.boot.store.entity.PwCommodity;
 import com.boot.store.vo.PageVo;
 
@@ -64,4 +65,23 @@ public interface IPwCommodityService extends IService<PwCommodity> {
 	 * @param commoditySellDto
 	 */
 	void sell(CommoditySellDto commoditySellDto);
+
+	/**
+	 * 获取商品
+	 * @param id
+	 * @return
+	 */
+	CommodityDto getCommodity(String id);
+
+	/**
+	 * 商品销售记录
+	 * @param page
+	 * @param limit
+	 * @param name
+	 * @param commodityNum
+	 * @param commodityTypeId
+	 * @param channelId
+	 * @return
+	 */
+	PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String name, String commodityNum, String commodityTypeId, String channelId,String id);
 }

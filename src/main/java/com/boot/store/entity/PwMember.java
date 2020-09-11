@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -49,7 +50,7 @@ public class PwMember extends Model<PwMember> {
     /**
      * 余额
      */
-    private Double balance;
+    private BigDecimal balance;
 
     /**
      * 0 过期 1正常

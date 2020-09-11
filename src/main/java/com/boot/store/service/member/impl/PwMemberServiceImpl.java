@@ -49,7 +49,7 @@ public class PwMemberServiceImpl extends ServiceImpl<PwMemberMapper, PwMember> i
 			MemberDto memberDto = MemberDto.builder().id(record.getId())
 					.name(record.getName())
 					.phone(record.getPhone())
-					.balance(record.getBalance())
+					.balance(record.getBalance().toString())
 					.status(record.getStatus())
 					.createTime(DateUtil.formatDateTime(record.getCreateTime()))
 					.recordSize(moneyList.size())

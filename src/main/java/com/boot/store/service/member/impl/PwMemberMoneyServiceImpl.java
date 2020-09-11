@@ -13,6 +13,7 @@ import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
 import com.boot.store.dto.member.MemberChargeDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,18 +32,19 @@ import java.util.List;
 @Service
 public class PwMemberMoneyServiceImpl extends ServiceImpl<PwMemberMoneyMapper, PwMemberMoney> implements IPwMemberMoneyService {
 
+	@Lazy
 	@Autowired
 	private IPwMemberService memberService;
 
 	@Override
-	public Boolean charge(MemberChargeDto memberChargeDto, Double beforeBalance, Double balance) {
+	public Boolean charge(MemberChargeDto memberChargeDto, BigDecimal beforeBalance, BigDecimal balance) {
 		PwMemberMoney memberMoney = new PwMemberMoney();
 		memberMoney.setOrderNum(UUIDUtils.genOrder());
 		memberMoney.setMemberId(memberChargeDto.getId());
 		memberMoney.setBeforeBalance(beforeBalance);
 		memberMoney.setBalance(balance);
-		memberMoney.setQuota(memberChargeDto.getQuota());
-		memberMoney.setActQuota(memberChargeDto.getActQuota());
+		memberMoney.setQuota(new BigDecimal(memberChargeDto.getQuota()));
+		memberMoney.setActQuota(new BigDecimal(memberChargeDto.getActQuota()));
 		memberMoney.setType(StoreConst.MEMBER_MONEY_CHARGE);
 		memberMoney.setPayType(memberChargeDto.getPayType());
 		memberMoney.setRemark(memberChargeDto.getChargeRemark());
@@ -64,7 +66,7 @@ public class PwMemberMoneyServiceImpl extends ServiceImpl<PwMemberMoneyMapper, P
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void deduction(Long id, BigDecimal money, String sellRemark, Integer payType) {
+	public void deduction(Long id, BigDecimal money, String sellRemark, Integer payType, String orderNum) {
 		PwMember member = memberService.getById(id);
 		if (null == member || member.getDeleted() == 1){
 			throw new ServiceException("会员不存在！");
@@ -72,9 +74,12 @@ public class PwMemberMoneyServiceImpl extends ServiceImpl<PwMemberMoneyMapper, P
 		if (member.getStatus() == 0){
 			throw new ServiceException("会员已过期！");
 		}
-		Double beforeBalance = member.getBalance();
-		Double afterBalance = beforeBalance - money.doubleValue();
-		if (afterBalance<0){
+		if (null == member.getBalance()){
+			throw new ServiceException("会员余额不足，请充值！");
+		}
+		BigDecimal beforeBalance = member.getBalance();
+		BigDecimal afterBalance = beforeBalance.subtract(money);
+		if (afterBalance.compareTo(new BigDecimal(0)) == -1){
 			throw new ServiceException("会员余额不足，请充值！");
 		}
 		member.setBalance(afterBalance);
@@ -82,12 +87,12 @@ public class PwMemberMoneyServiceImpl extends ServiceImpl<PwMemberMoneyMapper, P
 		memberService.updateById(member);
 
 		PwMemberMoney memberMoney = new PwMemberMoney();
-		memberMoney.setOrderNum(UUIDUtils.genOrder());
+		memberMoney.setOrderNum(orderNum);
 		memberMoney.setMemberId(id);
-		memberMoney.setBeforeBalance(member.getBalance());
+		memberMoney.setBeforeBalance(beforeBalance);
 		memberMoney.setBalance(afterBalance);
-		memberMoney.setQuota(money.doubleValue());
-		memberMoney.setActQuota(money.doubleValue());
+		memberMoney.setQuota(money);
+		memberMoney.setActQuota(money);
 		memberMoney.setType(StoreConst.MEMBER_MONEY_CONSUME);
 		memberMoney.setPayType(payType);
 		memberMoney.setRemark(sellRemark);

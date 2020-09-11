@@ -9,6 +9,7 @@
         <result column="name" property="name" />
         <result column="picture" property="picture" />
         <result column="count" property="count" />
+        <result column="sellCount" property="sellCount" />
         <result column="purchase_price" property="purchasePrice" />
         <result column="sell_price" property="sellPrice" />
         <result column="channel_id" property="channelId" />
@@ -25,7 +26,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, commodity_num, name, picture, count, purchase_price, sell_price, channel_id, commodity_type_id, status, discount, discount_rate, promotion, remark, create_time, update_time,deleted
+        id, commodity_num, name, picture, count,sell_count, purchase_price, sell_price, channel_id, commodity_type_id, status, discount, discount_rate, promotion, remark, create_time, update_time,deleted
     </sql>
 
     <select id="list" resultType="com.boot.store.dto.commodity.CommodityDto">
@@ -35,6 +36,8 @@
             commodity.commodity_num as commodityNum,
             commodity.picture,
             commodity.count,
+            commodity.sell_count as sellCount,
+            (commodity.count - commodity.sell_count) as stockCount,
             commodity.purchase_price as purchasePrice,
             commodity.sell_price as sellPrice,
             commodity.channel_id as channelId,
@@ -78,6 +81,76 @@
         </if>
         <if test="commodityTypeId != null and commodityTypeId != '' ">
             and commodity.commodity_type_id = #{commodityTypeId}
+        </if>
+    </select>
+
+    <select id="sellRecord" resultType="com.boot.store.dto.commodity.CommoditySellRecordDto">
+        SELECT
+            sale.order_num AS orderNum,
+            commodity.commodity_num AS commodityNum,
+            commodity.NAME AS NAME,
+            type.`name` AS commodityTypeName,
+            channel.channel_name AS channelName,
+            sale.count AS sellCount,
+            sale.purchase_quota AS purchasePrice,
+            sale.count * sale.quota as sellMoney,
+            sale.quota AS sellPrice,
+            IF(member.id IS NULL,'普通客户',member.NAME) AS customType,
+            member.id AS memberId,
+            sale.remark,
+            sale.create_time AS createTime
+        FROM
+            pw_purchase_sales sale
+        LEFT JOIN pw_commodity commodity ON sale.commodity_id = commodity.id
+        LEFT JOIN pw_commodity_type type ON sale.consumer_type = type.id
+        LEFT JOIN pw_channel channel ON sale.channel_id = channel.id
+        LEFT JOIN pw_member member ON sale.member_id = member.id
+        WHERE
+            1 = 1
+        <if test="id != null and id != '' ">
+            AND commodity.id = #{id}
+        </if>
+        <if test="name != null and name != '' ">
+            AND commodity.NAME = #{name}
+        </if>
+        <if test="commodityNum != null and commodityNum != '' ">
+            AND commodity.commodity_num = #{commodityNum}
+        </if>
+        <if test="commodityTypeId != null and commodityTypeId != '' ">
+            AND type.id = #{commodityTypeId}
+        </if>
+        <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
+            AND channel.id = #{commodityNumChannelId}
+        </if>
+        ORDER BY sale.create_time desc
+        LIMIT #{page},#{limit}
+    </select>
+
+    <select id="sellRecordCount" resultType="java.lang.Long">
+        SELECT
+        count(*)
+        FROM
+        pw_purchase_sales sale
+        LEFT JOIN pw_commodity commodity ON sale.commodity_id = commodity.id
+        LEFT JOIN pw_commodity_type type ON sale.consumer_type = type.id
+        LEFT JOIN pw_channel channel ON sale.channel_id = channel.id
+        LEFT JOIN pw_member member ON sale.member_id = member.id
+        WHERE
+        1 = 1
+        <if test="id != null and id != '' ">
+            AND commodity.id = #{id}
+        </if>
+        <if test="name != null and name != '' ">
+            AND commodity.NAME = #{name}
+        </if>
+        <if test="commodityNum != null and commodityNum != '' ">
+            AND commodity.commodity_num = #{commodityNum}
+        </if>
+        <if test="commodityTypeId != null and commodityTypeId != '' ">
+            AND type.id = #{commodityTypeId}
+        </if>
+        <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
+            AND channel.id = #{commodityNumChannelId}
         </if>
     </select>
 

@@ -67,6 +67,10 @@ public class PwPurchaseSales extends Model<PwPurchaseSales> {
      */
     private BigDecimal quota;
 
+	/**
+	 * 商品进价
+	 */
+	private BigDecimal purchaseQuota;
     /**
      * 1会员 2普通客户
      */

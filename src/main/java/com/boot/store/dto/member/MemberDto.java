@@ -43,7 +43,7 @@ public class MemberDto implements Serializable {
 	/**
 	 * 余额
 	 */
-	private Double balance;
+	private String balance;
 
 	/**
 	 * 0 过期 1正常

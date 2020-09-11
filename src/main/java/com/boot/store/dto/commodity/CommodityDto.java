@@ -53,6 +53,15 @@ public class CommodityDto implements Serializable {
 	@NotNull(message = "商品数量不能为空",groups = {ValidationGroups.Register.class,ValidationGroups.Editer.class})
 	private Integer count;
 
+	/**
+	 * 售出数量
+	 */
+	private Integer sellCount;
+
+	/**
+	 * 库存数量
+	 */
+	private Integer stockCount;
     /**
      * 进价
      */
@@ -111,10 +120,6 @@ public class CommodityDto implements Serializable {
     private String channelName;
 
     private String commodityTypeName;
-
-    private Integer sellCount;
-
-    private Integer stockCount;
 
     private List<XmSelectModelDto> typeList;
 

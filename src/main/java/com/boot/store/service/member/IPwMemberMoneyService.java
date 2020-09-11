@@ -25,7 +25,7 @@ public interface IPwMemberMoneyService extends IService<PwMemberMoney> {
 	 * @param balance
 	 * @return
 	 */
-	Boolean charge(MemberChargeDto memberChargeDto, Double beforeBalance, Double balance);
+	Boolean charge(MemberChargeDto memberChargeDto, BigDecimal beforeBalance, BigDecimal balance);
 
 	/**
 	 *  账单列表
@@ -42,10 +42,11 @@ public interface IPwMemberMoneyService extends IService<PwMemberMoney> {
 
 	/**
 	 * 会员扣费
-     * @param id
-     * @param money
-     * @param sellRemark
-     * @param payType
-     */
-	void deduction(Long id, BigDecimal money, String sellRemark, Integer payType);
+	 * @param id
+	 * @param money
+	 * @param sellRemark
+	 * @param payType
+	 * @param orderNum
+	 */
+	void deduction(Long id, BigDecimal money, String sellRemark, Integer payType, String orderNum);
 }

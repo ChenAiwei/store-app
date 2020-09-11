@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -46,13 +47,13 @@ public class PwMemberMoney extends Model<PwMemberMoney> {
     /**
      * 余额
      */
-    private Double balance;
+    private BigDecimal balance;
 
     /**
      * 上一次余额
      */
     @TableField("before_balance")
-    private Double beforeBalance;
+    private BigDecimal beforeBalance;
 
     /**
      * 类型 1充值 2消费
@@ -62,13 +63,13 @@ public class PwMemberMoney extends Model<PwMemberMoney> {
     /**
      * 额度
      */
-    private Double quota;
+    private BigDecimal quota;
 
     /**
      * 实际付款额度
      */
     @TableField("act_quota")
-    private Double actQuota;
+    private BigDecimal actQuota;
 
     /**
      * 模式 1微信 2支付宝 3现金 4其他

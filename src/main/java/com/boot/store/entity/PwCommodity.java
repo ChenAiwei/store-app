@@ -53,6 +53,11 @@ public class PwCommodity extends Model<PwCommodity> {
      */
     private Integer count;
 
+	/**
+	 * 商品售出数量
+	 */
+	private Integer sellCount;
+
     /**
      * 进价
      */

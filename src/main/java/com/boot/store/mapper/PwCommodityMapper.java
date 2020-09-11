@@ -2,6 +2,7 @@ package com.boot.store.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.boot.store.dto.commodity.CommodityDto;
+import com.boot.store.dto.commodity.CommoditySellRecordDto;
 import com.boot.store.entity.PwCommodity;
 
 import java.util.List;
@@ -37,4 +38,26 @@ public interface PwCommodityMapper extends BaseMapper<PwCommodity> {
 	 * @return
 	 */
 	Long count(Integer page, Integer limit, String name, String channelId, String commodityTypeId);
+
+	/**
+	 * 销售记录
+	 * @param page
+	 * @param limit
+	 * @param name
+	 * @param commodityNum
+	 * @param commodityTypeId
+	 * @param commodityNumChannelId
+	 * @return
+	 */
+	List<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String name, String commodityNum, String commodityTypeId, String commodityNumChannelId,String id);
+
+	/**
+	 * 销售记录count
+	 * @param name
+	 * @param commodityNum
+	 * @param commodityTypeId
+	 * @param commodityNumChannelId
+	 * @return
+	 */
+	Long sellRecordCount(String name, String commodityNum, String commodityTypeId, String commodityNumChannelId,String id);
 }

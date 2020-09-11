@@ -10,6 +10,7 @@
         <result column="count" property="count" />
         <result column="channel_id" property="channelId" />
         <result column="member_id" property="memberId" />
+        <result column="purchase_quota" property="purchaseQuota" />
         <result column="quota" property="quota" />
         <result column="consumer_type" property="consumerType" />
         <result column="remark" property="remark" />
@@ -18,7 +19,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, order_num, commodity_id, count, channel_id, member_id, quota, consumer_type, remark, create_time
+        id, order_num, commodity_id, count, channel_id, member_id, purchase_quota,quota, consumer_type, remark, create_time
     </sql>
 
 </mapper>
