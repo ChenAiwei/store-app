@@ -2,6 +2,7 @@ package com.boot.store.controller.channel;
 
 import com.boot.store.annotation.Log;
 import com.boot.store.dto.auth.ValidationGroups;
+import com.boot.store.dto.channel.StockDto;
 import com.boot.store.dto.plugin.XmSelectModelDto;
 import com.boot.store.entity.PwChannel;
 import com.boot.store.enums.LogEnum;
@@ -79,4 +80,11 @@ public class ChannelController {
 		channelService.deleteById(id);
 		return ResultVoUtil.success();
 	}
+
+	@GetMapping("/stockList")
+	public ResultVo<PageVo<StockDto>> stockList(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit, String commodityTypeId, String channelId){
+		PageVo<StockDto> stockList = channelService.stockList(page,limit,commodityTypeId,channelId);
+		return ResultVoUtil.success(stockList);
+	}
+
 }

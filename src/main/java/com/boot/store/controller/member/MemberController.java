@@ -86,7 +86,7 @@ public class MemberController {
 		MemberDto memberDto = MemberDto.builder().id(pwMember.getId())
 				.name(pwMember.getName())
 				.phone(pwMember.getPhone())
-				.balance(pwMember.getBalance().toString())
+				.balance(null != pwMember.getBalance()?pwMember.getBalance().toString():"")
 				.status(pwMember.getStatus())
 				.sex(pwMember.getSex())
 				.createTime(DateUtil.formatDateTime(pwMember.getCreateTime()))
@@ -114,7 +114,8 @@ public class MemberController {
 			throw new ServiceException("会员不存在！");
 		}
 		BigDecimal beforeBalance = pwMember.getBalance();
-		pwMember.setBalance(beforeBalance.add(new BigDecimal(memberChargeDto.getActQuota())));
+
+		pwMember.setBalance(null != beforeBalance?beforeBalance.add(new BigDecimal(memberChargeDto.getActQuota())):new BigDecimal(memberChargeDto.getActQuota()));
 		Boolean update = memberService.updateById(pwMember);
 		Boolean charge = memberMoneyService.charge(memberChargeDto,beforeBalance,pwMember.getBalance());
 		if (update && charge){

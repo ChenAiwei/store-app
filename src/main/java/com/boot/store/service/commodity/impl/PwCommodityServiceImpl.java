@@ -243,14 +243,14 @@ public class PwCommodityServiceImpl extends ServiceImpl<PwCommodityMapper, PwCom
 	}
 
 	@Override
-	public PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String name, String commodityNum, String commodityTypeId, String channelId,String id) {
+	public PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String channelId, String id) {
 		if (page == 1){
 			page = 0;
 		}else{
 			page = limit*(page -1);
 		}
-		List<CommoditySellRecordDto> recordList = this.baseMapper.sellRecord(page,limit,name,commodityNum,commodityTypeId,channelId,id);
-		Long recordCount = this.baseMapper.sellRecordCount(name,commodityNum,commodityTypeId,channelId,id);
+		List<CommoditySellRecordDto> recordList = this.baseMapper.sellRecord(page,limit,orderNum,name,commodityNum,commodityTypeId,channelId,id);
+		Long recordCount = this.baseMapper.sellRecordCount(name,orderNum,commodityNum,commodityTypeId,channelId,id);
 		return new PageVo<>(recordCount,recordList);
 	}
 }

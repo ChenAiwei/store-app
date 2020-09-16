@@ -1,6 +1,7 @@
 package com.boot.store.service.channel;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.boot.store.dto.channel.StockDto;
 import com.boot.store.entity.PwChannel;
 import com.boot.store.vo.PageVo;
 
@@ -29,4 +30,14 @@ public interface IPwChannelService extends IService<PwChannel> {
 	 * @param id
 	 */
 	void deleteById(String id);
+
+	/**
+	 * 库存列表
+	 * @param page
+	 * @param limit
+	 * @param commodityType
+	 * @param channekType
+	 * @return
+	 */
+	PageVo<StockDto> stockList(Integer page, Integer limit, String commodityType, String channekType);
 }

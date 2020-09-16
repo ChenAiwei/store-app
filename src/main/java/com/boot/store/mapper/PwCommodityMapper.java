@@ -43,21 +43,24 @@ public interface PwCommodityMapper extends BaseMapper<PwCommodity> {
 	 * 销售记录
 	 * @param page
 	 * @param limit
+	 * @param orderNum
 	 * @param name
 	 * @param commodityNum
 	 * @param commodityTypeId
 	 * @param commodityNumChannelId
 	 * @return
 	 */
-	List<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String name, String commodityNum, String commodityTypeId, String commodityNumChannelId,String id);
+	List<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String commodityNumChannelId, String id);
 
 	/**
 	 * 销售记录count
+	 *
+	 * @param s
 	 * @param name
 	 * @param commodityNum
 	 * @param commodityTypeId
 	 * @param commodityNumChannelId
 	 * @return
 	 */
-	Long sellRecordCount(String name, String commodityNum, String commodityTypeId, String commodityNumChannelId,String id);
+	Long sellRecordCount(String orderNum, String name, String commodityNum, String commodityTypeId, String commodityNumChannelId, String id);
 }

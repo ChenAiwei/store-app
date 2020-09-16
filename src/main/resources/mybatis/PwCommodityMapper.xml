@@ -102,13 +102,16 @@
         FROM
             pw_purchase_sales sale
         LEFT JOIN pw_commodity commodity ON sale.commodity_id = commodity.id
-        LEFT JOIN pw_commodity_type type ON sale.consumer_type = type.id
+        LEFT JOIN pw_commodity_type type ON commodity.commodity_type_id = type.id
         LEFT JOIN pw_channel channel ON sale.channel_id = channel.id
         LEFT JOIN pw_member member ON sale.member_id = member.id
         WHERE
             1 = 1
         <if test="id != null and id != '' ">
             AND commodity.id = #{id}
+        </if>
+        <if test="orderNum != null and orderNum != '' ">
+            AND sale.order_num = #{orderNum}
         </if>
         <if test="name != null and name != '' ">
             AND commodity.NAME = #{name}
@@ -117,7 +120,7 @@
             AND commodity.commodity_num = #{commodityNum}
         </if>
         <if test="commodityTypeId != null and commodityTypeId != '' ">
-            AND type.id = #{commodityTypeId}
+            AND commodity.commodity_type_id = #{commodityTypeId}
         </if>
         <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
             AND channel.id = #{commodityNumChannelId}
@@ -132,13 +135,16 @@
         FROM
         pw_purchase_sales sale
         LEFT JOIN pw_commodity commodity ON sale.commodity_id = commodity.id
-        LEFT JOIN pw_commodity_type type ON sale.consumer_type = type.id
+        LEFT JOIN pw_commodity_type type ON commodity.commodity_type_id = type.id
         LEFT JOIN pw_channel channel ON sale.channel_id = channel.id
         LEFT JOIN pw_member member ON sale.member_id = member.id
         WHERE
         1 = 1
         <if test="id != null and id != '' ">
             AND commodity.id = #{id}
+        </if>
+        <if test="orderNum != null and orderNum != '' ">
+            AND sale.order_num = #{orderNum}
         </if>
         <if test="name != null and name != '' ">
             AND commodity.NAME = #{name}
@@ -147,7 +153,7 @@
             AND commodity.commodity_num = #{commodityNum}
         </if>
         <if test="commodityTypeId != null and commodityTypeId != '' ">
-            AND type.id = #{commodityTypeId}
+            AND commodity.commodity_type_id = #{commodityTypeId}
         </if>
         <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
             AND channel.id = #{commodityNumChannelId}

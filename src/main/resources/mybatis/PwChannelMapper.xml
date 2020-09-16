@@ -21,4 +21,124 @@
         id, channel_name, address, name, phone, remark, type, create_time,deleted
     </sql>
 
+    <select id="stockList" resultType="com.boot.store.dto.channel.StockDto">
+        SELECT
+        t.commodityTypeName,
+        t.channelName,
+        t.commodityId,
+        t.channelId,
+        sum( t.count ) AS count,
+        sum( t.sellCount ) AS sellCount,
+        sum( t.stockCount ) AS stockCount,
+        sum( t.purchasePrice ) AS purchasePrice,
+        sum( t.sellPrice ) AS sellPrice
+    FROM
+        (
+    SELECT
+        commodity.NAME AS commodityName,
+        commodity.commodity_num AS commodityNum,
+        ctype.`name` AS commodityTypeName,
+        channel.channel_name AS channelName,
+        commodity.id AS commodityId,
+        commodity.commodity_type_id AS commodityTypeId,
+        commodity.channel_id AS channelId,
+        commodity.count AS count,
+    IF
+        ( sale.count IS NULL, 0, sale.count ) AS sellCount,
+        ( commodity.count - IF ( sale.count IS NULL, 0, sale.count ) ) AS stockCount,
+        if(sale.purchasePrice is null,commodity.purchase_price,sale.purchasePrice) as purchasePrice,
+        sale.sellPrice
+    FROM
+        pw_commodity commodity
+        LEFT JOIN (
+    SELECT
+        commodity_id AS commodityId,
+        channel_id AS channelId,
+        sum( count ) AS count,
+        sum( count*purchase_quota ) AS purchasePrice,
+        sum( count*quota ) AS sellPrice
+        FROM
+        pw_purchase_sales
+    GROUP BY
+        commodity_id,
+        channel_id
+        ) AS sale ON sale.commodityId = commodity.id
+        LEFT JOIN pw_commodity_type ctype ON commodity.commodity_type_id = ctype.id
+        LEFT JOIN pw_channel channel ON commodity.channel_id = channel.id
+        ) AS t
+    WHERE 1=1
+    <if test="commodityType != null and commodityType != '' ">
+        AND t.commodityTypeId = #{commodityType}
+    </if>
+    <if test="channelType != null and channelType != '' ">
+        AND t.channelId = #{channelType}
+    </if>
+    GROUP BY
+        t.commodityTypeId,
+        t.channelId
+        LIMIT #{page},#{limit}
+    </select>
+
+    <select id="stockCount" resultType="java.lang.Long">
+        SELECT
+        count(*)
+        FROM
+        (
+        SELECT
+        t.commodityTypeName,
+        t.channelName,
+        t.commodityId,
+        t.channelId,
+        sum( t.count ) AS count,
+        sum( t.sellCount ) AS sellCount,
+        sum( t.stockCount ) AS stockCount,
+        sum( t.purchasePrice ) AS purchasePrice,
+        sum( t.sellPrice ) AS sellPrice
+        FROM
+        (
+        SELECT
+        commodity.NAME AS commodityName,
+        commodity.commodity_num AS commodityNum,
+        ctype.`name` AS commodityTypeName,
+        channel.channel_name AS channelName,
+        commodity.id AS commodityId,
+        commodity.commodity_type_id AS commodityTypeId,
+        commodity.channel_id AS channelId,
+        commodity.count AS count,
+        IF
+        ( sale.count IS NULL, 0, sale.count ) AS sellCount,
+        ( commodity.count - IF ( sale.count IS NULL, 0, sale.count ) ) AS stockCount,
+        if(sale.purchasePrice is null,commodity.purchase_price,sale.purchasePrice) as purchasePrice,
+        sale.sellPrice
+        FROM
+        pw_commodity commodity
+        LEFT JOIN (
+        SELECT
+        commodity_id AS commodityId,
+        channel_id AS channelId,
+        sum( count ) AS count,
+        sum( count*purchase_quota ) AS purchasePrice,
+        sum( count*quota ) AS sellPrice
+        FROM
+        pw_purchase_sales
+        GROUP BY
+        commodity_id,
+        channel_id
+        ) AS sale ON sale.commodityId = commodity.id
+        LEFT JOIN pw_commodity_type ctype ON commodity.commodity_type_id = ctype.id
+        LEFT JOIN pw_channel channel ON commodity.channel_id = channel.id
+        ) AS t
+        WHERE 1=1
+        <if test="commodityType != null and commodityType != '' ">
+            AND t.commodityTypeId = #{commodityType}
+        </if>
+        <if test="channelType != null and channelType != '' ">
+            AND t.channelId = #{channelType}
+        </if>
+        GROUP BY
+        t.commodityTypeId,
+        t.channelId
+        ) as temp
+    </select>
+
 </mapper>

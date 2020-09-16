@@ -95,8 +95,8 @@ public class CommodityController {
 	}
 
 	@GetMapping("/sellRecord")
-	public ResultVo<PageVo<CommoditySellRecordDto>> sellRecord(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit, String name, String commodityNum,String channelId,String commodityTypeId,String id){
-		PageVo<CommoditySellRecordDto> listSellRecord = commodityService.sellRecord(page,limit,name,commodityNum,commodityTypeId,channelId,id);
+	public ResultVo<PageVo<CommoditySellRecordDto>> sellRecord(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit, String name,String orderNum, String commodityNum,String channelId,String commodityTypeId,String id){
+		PageVo<CommoditySellRecordDto> listSellRecord = commodityService.sellRecord(page,limit,orderNum,name,commodityNum,commodityTypeId,channelId,id);
 		return ResultVoUtil.success(listSellRecord);
 	}
 	private void checkParams(CommodityDto commodityDto) {
