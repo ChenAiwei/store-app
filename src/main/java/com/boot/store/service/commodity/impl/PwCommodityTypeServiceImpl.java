@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.boot.store.entity.PwCommodityType;
+import com.boot.store.exception.ServiceException;
 import com.boot.store.mapper.PwCommodityTypeMapper;
 import com.boot.store.service.commodity.IPwCommodityTypeService;
 import com.boot.store.vo.PageVo;
@@ -38,6 +39,9 @@ public class PwCommodityTypeServiceImpl extends ServiceImpl<PwCommodityTypeMappe
 	@Override
 	public void deleteById(Long id) {
 		PwCommodityType pwCommodityType = this.baseMapper.selectById(id);
+		if (null == pwCommodityType){
+			throw new ServiceException("记录不存在！");
+		}
 		pwCommodityType.setDeleted(1);
 		this.baseMapper.updateById(pwCommodityType);
 	}
