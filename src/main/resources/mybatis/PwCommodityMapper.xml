@@ -125,6 +125,9 @@
         <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
             AND channel.id = #{commodityNumChannelId}
         </if>
+        <if test="date != null and date != '' ">
+            AND DATE_FORMAT(sale.create_time, '%Y-%m-%d') = #{date}
+        </if>
         ORDER BY sale.create_time desc
         LIMIT #{page},#{limit}
     </select>
@@ -157,6 +160,9 @@
         </if>
         <if test="commodityNumChannelId != null and commodityNumChannelId != '' ">
             AND channel.id = #{commodityNumChannelId}
+        </if>
+        <if test="date != null and date != '' ">
+            AND DATE_FORMAT(sale.create_time, '%Y-%m-%d') = #{date}
         </if>
     </select>
 

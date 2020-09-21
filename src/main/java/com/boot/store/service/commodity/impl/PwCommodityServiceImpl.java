@@ -20,6 +20,7 @@ import com.boot.store.service.member.IPwMemberMoneyService;
 import com.boot.store.service.member.IPwMemberService;
 import com.boot.store.utils.UUIDUtils;
 import com.boot.store.vo.PageVo;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -243,14 +244,14 @@ public class PwCommodityServiceImpl extends ServiceImpl<PwCommodityMapper, PwCom
 	}
 
 	@Override
-	public PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String channelId, String id) {
+	public PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String channelId, String id,@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")String date) {
 		if (page == 1){
 			page = 0;
 		}else{
 			page = limit*(page -1);
 		}
-		List<CommoditySellRecordDto> recordList = this.baseMapper.sellRecord(page,limit,orderNum,name,commodityNum,commodityTypeId,channelId,id);
-		Long recordCount = this.baseMapper.sellRecordCount(name,orderNum,commodityNum,commodityTypeId,channelId,id);
+		List<CommoditySellRecordDto> recordList = this.baseMapper.sellRecord(page,limit,orderNum,name,commodityNum,commodityTypeId,channelId,id,date);
+		Long recordCount = this.baseMapper.sellRecordCount(name,orderNum,commodityNum,commodityTypeId,channelId,id,date);
 		return new PageVo<>(recordCount,recordList);
 	}
 }

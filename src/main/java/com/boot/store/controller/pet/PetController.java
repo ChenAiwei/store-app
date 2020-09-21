@@ -3,6 +3,7 @@ package com.boot.store.controller.pet;
 import com.boot.store.annotation.Log;
 import com.boot.store.dto.auth.ValidationGroups;
 import com.boot.store.entity.PwPet;
+import com.boot.store.entity.PwPetSales;
 import com.boot.store.enums.LogEnum;
 import com.boot.store.exception.ServiceException;
 import com.boot.store.service.pet.IPwPetService;
@@ -13,6 +14,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Author：chenaiwei
@@ -63,5 +66,24 @@ public class PetController {
 		}
 		petService.deletePet(id);
 		return ResultVoUtil.success();
+	}
+
+	@Log(type = LogEnum.ADD,option = "宠物售出")
+	@GetMapping("/sellPet")
+	public ResultVo<?> sellPet(@RequestParam String id){
+		if (StringUtils.isBlank(id)){
+			throw new ServiceException("id不能为空！");
+		}
+		petService.sellPet(id);
+		return ResultVoUtil.success();
+	}
+
+	@GetMapping("/record")
+	public ResultVo<List<PwPetSales>> record(@RequestParam String id){
+		if (StringUtils.isBlank(id)){
+			throw new ServiceException("id不能为空！");
+		}
+		List<PwPetSales> recordList = petService.record(Long.valueOf(id));
+		return ResultVoUtil.success(recordList);
 	}
 }

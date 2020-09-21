@@ -23,5 +23,49 @@
     <sql id="Base_Column_List">
         id, name, pet_type_id, picture, source, status, start_time, remark, sell_price, purchase_price, sell_date, create_time, deleted
     </sql>
+    <select id="list" resultType="com.boot.store.entity.PwPet">
+        SELECT
+        pet.id,
+        pet.NAME,
+        type.pet_name AS petType,
+        pet.source,
+        pet.`status`,
+        pet.start_time AS startTime,
+        pet.purchase_price AS purchasePrice,
+        pet.sell_price AS sellPrice,
+        pet.sell_date AS sellDate,
+        pet.remark
+    FROM
+        pw_pet pet
+        LEFT JOIN pw_pet_type type ON pet.pet_type_id = type.id
+    WHERE
+        1 = 1
+        <if test="name != null and name != '' ">
+            AND pet.NAME = #{name}
+        </if>
+        <if test="typeId != null and typeId != '' ">
+            AND pet.pet_type_id = #{typeId}
+        </if>
+        AND pet.deleted = 0
+    ORDER BY
+        pet.create_time DESC
+        LIMIT #{page},#{limit}
+    </select>
+    <select id="count" resultType="java.lang.Long">
+        SELECT
+            count(*)
+        FROM
+        pw_pet pet
+        LEFT JOIN pw_pet_type type ON pet.pet_type_id = type.id
+        WHERE
+        1 = 1
+        <if test="name != null and name != '' ">
+            AND pet.NAME = #{name}
+        </if>
+        <if test="typeId != null and typeId != '' ">
+            AND pet.pet_type_id = #{typeId}
+        </if>
+        AND pet.deleted = 0
+    </select>
 
 </mapper>

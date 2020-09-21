@@ -84,5 +84,5 @@ public interface IPwCommodityService extends IService<PwCommodity> {
 	 * @param channelId
 	 * @return
 	 */
-	PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String channelId, String id);
+	PageVo<CommoditySellRecordDto> sellRecord(Integer page, Integer limit, String orderNum, String name, String commodityNum, String commodityTypeId, String channelId, String id,String date);
 }

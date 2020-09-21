@@ -2,7 +2,11 @@ package com.boot.store.service.pet;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.entity.PwPetBeautyCare;
+import com.boot.store.entity.PwPetSales;
 import com.boot.store.vo.PageVo;
+
+import java.text.ParseException;
+import java.util.List;
 
 /**
  * <p>
@@ -41,4 +45,20 @@ public interface IPwPetBeautyCareService extends IService<PwPetBeautyCare> {
 	 * @param id
 	 */
 	void delete(Long id);
+
+	/**
+	 * 宠物服务下单
+	 * @param id
+	 */
+	void sell(Long id);
+
+	/**
+	 * 服务记录
+	 * @param id
+	 * @param page
+	 * @param limit
+	 * @param date
+	 * @return
+	 */
+	PageVo<PwPetSales> record(Long id, Integer page, Integer limit, String date) throws ParseException;
 }

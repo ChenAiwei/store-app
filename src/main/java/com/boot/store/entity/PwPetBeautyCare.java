@@ -1,19 +1,18 @@
 package com.boot.store.entity;
 
-import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
-
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.boot.store.dto.auth.ValidationGroups;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * <p>
@@ -48,7 +47,7 @@ public class PwPetBeautyCare extends Model<PwPetBeautyCare> {
      */
 	@NotNull(message = "petType 不允许为空",groups = {ValidationGroups.Editer.class,ValidationGroups.Register.class})
 	@TableField("pet_type")
-    private Long petType;
+    private Integer petType;
 
     /**
      * 费用

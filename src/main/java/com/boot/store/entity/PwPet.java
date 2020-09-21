@@ -107,6 +107,8 @@ public class PwPet extends Model<PwPet> {
      */
     private Integer deleted;
 
+	@TableField(exist = false)
+    private String petType;
 
     @Override
     protected Serializable pkVal() {

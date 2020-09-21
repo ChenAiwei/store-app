@@ -41,12 +41,12 @@ public class PwPetSales extends Model<PwPetSales> {
     /**
      * 1消费 2收入
      */
-    private Boolean type;
+    private Integer type;
 
     /**
      * 1宠物 2寄养 3美容护理
      */
-    private Boolean source;
+    private Integer source;
 
     @TableField("source_id")
     private Long sourceId;
@@ -61,6 +61,8 @@ public class PwPetSales extends Model<PwPetSales> {
     @TableField("create_time")
     private Date createTime;
 
+	@TableField(exist = false)
+	private String extName;
 
     @Override
     protected Serializable pkVal() {

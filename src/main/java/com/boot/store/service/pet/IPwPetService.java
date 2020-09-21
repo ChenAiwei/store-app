@@ -2,7 +2,10 @@ package com.boot.store.service.pet;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.entity.PwPet;
+import com.boot.store.entity.PwPetSales;
 import com.boot.store.vo.PageVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -41,4 +44,17 @@ public interface IPwPetService extends IService<PwPet> {
 	 * @param id
 	 */
 	void deletePet(String id);
+
+	/**
+	 * 记录查询
+	 * @param valueOf
+	 * @return
+	 */
+	List<PwPetSales> record(Long valueOf);
+
+	/**
+	 * 宠物出售
+	 * @param id
+	 */
+	void sellPet(String id);
 }
