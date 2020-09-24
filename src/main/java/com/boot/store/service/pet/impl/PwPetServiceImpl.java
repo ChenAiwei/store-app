@@ -79,6 +79,7 @@ public class PwPetServiceImpl extends ServiceImpl<PwPetMapper, PwPet> implements
 		petSalesService.updateBatchById(petSalesList);
 	}
 
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public void deletePet(String id) {
 		PwPet pwPet = this.baseMapper.selectById(id);
@@ -87,6 +88,7 @@ public class PwPetServiceImpl extends ServiceImpl<PwPetMapper, PwPet> implements
 		}
 		pwPet.setDeleted(1);
 		this.updateById(pwPet);
+		petSalesService.remove(new QueryWrapper<PwPetSales>().eq("source",1).eq("source_id",id));
 	}
 
 	@Override

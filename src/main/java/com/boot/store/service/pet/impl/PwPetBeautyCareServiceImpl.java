@@ -17,6 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -59,6 +60,7 @@ public class PwPetBeautyCareServiceImpl extends ServiceImpl<PwPetBeautyCareMappe
 		this.baseMapper.updateById(pwPetBeautyCare);
 	}
 
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public void delete(Long id) {
 		PwPetBeautyCare pwPetBeautyCare = this.baseMapper.selectById(id);
@@ -67,6 +69,7 @@ public class PwPetBeautyCareServiceImpl extends ServiceImpl<PwPetBeautyCareMappe
 		}
 		pwPetBeautyCare.setDeleted(1);
 		this.baseMapper.updateById(pwPetBeautyCare);
+		salesService.remove(new QueryWrapper<PwPetSales>().eq("type",2).eq("source",3).eq("source_id",id));
 	}
 
 	@Override

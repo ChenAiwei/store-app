@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.PwPetFosterCareMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.boot.store.entity.PwPetFosterCare">
+        <id column="id" property="id" />
+        <result column="pet_name" property="petName" />
+        <result column="order_num" property="orderNum" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="contact_person" property="contactPerson" />
+        <result column="phone_num" property="phoneNum" />
+        <result column="remark" property="remark" />
+        <result column="status" property="status" />
+        <result column="price" property="price" />
+        <result column="pet_picture" property="petPicture" />
+        <result column="picture" property="picture" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pet_name, order_num, start_time, end_time, contact_person, phone_num, remark, status, price, pet_picture, picture, create_time, update_time, deleted
+    </sql>
+
+</mapper>
