@@ -100,7 +100,7 @@ public class WebSocketServer {
 	@OnClose
 	public void onClose(Session session) {
 		// 从map中删除
-		webSocketMap.remove(this);
+		webSocketMap.remove(session.getUserProperties().get("userId"));
 		// 在线数减1
 		subOnlineCount();
 		log.info("客户端：{},连接关闭，当前在线数为：{}",session.getUserProperties().get("userId"),getOnlineCount());
