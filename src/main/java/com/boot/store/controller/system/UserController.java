@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.boot.store.annotation.Log;
 import com.boot.store.dto.auth.UserDto;
 import com.boot.store.dto.auth.ValidationGroups;
+import com.boot.store.dto.system.UserChangePwdDto;
 import com.boot.store.entity.TUser;
 import com.boot.store.entity.TUserRole;
 import com.boot.store.enums.LogEnum;
@@ -108,5 +109,12 @@ public class UserController {
 	public ResultVo<UserEditVo> getUserById(@RequestParam(required = true) String id){
 		UserEditVo userEditVo = userService.getUserById(id);
 		return ResultVoUtil.success(userEditVo);
+	}
+
+	@Log(type = LogEnum.EDIT,option = "修改密码")
+	@PostMapping("/editPwd")
+	public ResultVo<?> editPwd(@RequestBody @Validated UserChangePwdDto pwdDto) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		userService.editPwd(pwdDto);
+		return ResultVoUtil.success();
 	}
 }

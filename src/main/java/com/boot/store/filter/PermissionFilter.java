@@ -47,7 +47,7 @@ public class PermissionFilter implements Filter {
 
 	private static final Set<String> ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
 			Arrays.asList("/verify/getCode/blend", "/verify/getCode/number","/login", "/logout", "/register")));
-
+    private static final String WEBSOCKET_TAG ="/websocket";
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {}
 
@@ -59,7 +59,7 @@ public class PermissionFilter implements Filter {
 		log.info("Request URI:{}", path);
 		String userId = request.getHeader("userId");
 		String token = request.getHeader("token");
-		if (!ALLOWED_PATHS.contains(path)) {
+		if (!ALLOWED_PATHS.contains(path) && !path.startsWith(WEBSOCKET_TAG)) {
 			if (StringUtils.isEmpty(userId) || StringUtils.isEmpty(token)) {
 				resolver.resolveException(request, response, null, new TokenException("token用户信息验证失败，请重新登录！"));
 				return;

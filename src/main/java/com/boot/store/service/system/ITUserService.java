@@ -2,6 +2,7 @@ package com.boot.store.service.system;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.boot.store.dto.auth.UserDto;
+import com.boot.store.dto.system.UserChangePwdDto;
 import com.boot.store.entity.TUser;
 import com.boot.store.vo.PageVo;
 import com.boot.store.vo.user.UserEditVo;
@@ -73,4 +74,10 @@ public interface ITUserService extends IService<TUser> {
 	 * @param userStatusVo
 	 */
 	void userStatus(UserStatusVo userStatusVo);
+
+	/**
+	 * 修改用户密码
+	 * @param pwdDto
+	 */
+	void editPwd(UserChangePwdDto pwdDto) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 }

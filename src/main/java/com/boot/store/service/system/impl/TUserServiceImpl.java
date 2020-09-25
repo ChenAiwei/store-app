@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.boot.store.dto.auth.RoleUserInfoDto;
 import com.boot.store.dto.auth.UserDto;
 import com.boot.store.dto.system.RoleNameDto;
+import com.boot.store.dto.system.UserChangePwdDto;
 import com.boot.store.entity.TRole;
 import com.boot.store.entity.TUser;
 import com.boot.store.entity.TUserRole;
@@ -210,6 +211,23 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 			userList.add(new TUser().setUid(id).setStatus(userStatusVo.getType() == 0?false:true));
 		});
 		this.updateBatchById(userList);
+	}
+
+	@Override
+	public void editPwd(UserChangePwdDto pwdDto) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+		TUser user = this.getById(pwdDto.getUserId());
+		if (user == null){
+			throw new ServiceException("用户不存在!");
+		}
+		if (!pwdDto.getNewPwd().equals(pwdDto.getConfirmPwd())){
+			throw new ServiceException("两次输入密码不一致！");
+		}
+		boolean isOk = MD5Util.validPassword(pwdDto.getOldPwd(), user.getPassWord());
+		if (!isOk){
+			throw new ServiceException("旧密码错误！");
+		}
+		user.setPassWord(MD5Util.getEncryptedPwd(pwdDto.getConfirmPwd()));
+		this.updateById(user);
 	}
 
 	public List<RoleUserInfoDto> getRoleUserList(String userId){
