@@ -25,7 +25,6 @@
         SELECT
         t.commodityTypeName,
         t.channelName,
-        t.commodityId,
         t.channelId,
         sum( t.count ) AS count,
         sum( t.sellCount ) AS sellCount,
