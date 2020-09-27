@@ -20,6 +20,7 @@ public class CommoditySellRecordDto implements Serializable {
 	private String sellPrice;
 	private Integer sellCount;
 	private String sellMoney;
+	private String profit;
 	private String customType;
 	private Long memberId;
 	private String remark;

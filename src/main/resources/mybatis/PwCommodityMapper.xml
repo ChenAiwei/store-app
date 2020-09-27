@@ -94,6 +94,7 @@
             sale.count AS sellCount,
             sale.purchase_quota AS purchasePrice,
             sale.count * sale.quota as sellMoney,
+            (sale.quota - sale.purchase_quota) * sale.count as profit,
             sale.quota AS sellPrice,
             IF(member.id IS NULL,'普通客户',member.NAME) AS customType,
             member.id AS memberId,

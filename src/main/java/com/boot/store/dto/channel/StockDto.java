@@ -18,4 +18,5 @@ public class StockDto implements Serializable {
 	private Integer stockCount;
 	private Double purchasePrice;
 	private Double sellPrice;
+	private Double profit;
 }

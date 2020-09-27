@@ -30,7 +30,8 @@
         sum( t.sellCount ) AS sellCount,
         sum( t.stockCount ) AS stockCount,
         sum( t.purchasePrice ) AS purchasePrice,
-        sum( t.sellPrice ) AS sellPrice
+        sum( t.sellPrice ) AS sellPrice,
+        if(sum( t.sellPrice ) is NULL,'', sum( t.sellPrice ) - sum( t.purchasePrice )) as profit
     FROM
         (
     SELECT
