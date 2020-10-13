@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.store.mapper.StatisticsMapper">
+    <select id="dayOfView" resultType="com.boot.store.dto.statistics.StatisticsDto">
+        SELECT
+        DATE_FORMAT( create_time, '%Y-%m-%d' ) AS date,
+        sum( (quota- purchase_quota)*count ) AS quota,
+        'P' AS type
+        FROM
+        pw_purchase_sales
+        WHERE
+        DATE_FORMAT( create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( create_time, '%Y-%m-%d' ) &lt;= #{date}
+        GROUP BY
+        DATE_FORMAT( create_time, '%Y-%m-%d' ) UNION ALL
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sum( sale.money ) AS quota,
+        'J' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN pw_pet_foster_care care ON sale.source_id = care.id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{date}
+        AND care.deleted = 0
+        AND sale.type = 2
+        AND sale.source = 2
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) UNION ALL
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sum( sale.money ) AS quota,
+        'M' AS type
+        FROM
+        pw_pet_sales sale
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{date}
+        AND sale.type = 2
+        AND sale.source = 3
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) UNION ALL
+        SELECT
+        t.date,
+        sum( t.quota ) AS quota,
+        t.type
+        FROM
+        (
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sale.money - t.money AS quota,
+        'S' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN ( SELECT source_id, money FROM pw_pet_sales temp WHERE temp.type = 1 AND temp.source = 1 ) AS t ON sale.source_id = t.source_id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{date}
+        AND sale.type = 2
+        AND sale.source = 1
+        ) AS t
+        GROUP BY
+        t.date
+    </select>
+
+    <select id="monthOfView" resultType="com.boot.store.dto.statistics.StatisticsDto">
+        SELECT
+        DATE_FORMAT( create_time, '%Y-%m' ) AS date,
+       sum( (quota- purchase_quota)*count ) AS quota,
+        'P' AS type
+        FROM
+        pw_purchase_sales
+        WHERE
+        DATE_FORMAT( create_time, '%Y-%m' ) &gt;= #{startDate}
+        AND DATE_FORMAT( create_time, '%Y-%m' ) &lt;= #{date}
+        GROUP BY
+        DATE_FORMAT( create_time, '%Y-%m' ) UNION ALL
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) AS date,
+        sum( sale.money ) AS quota,
+        'J' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN pw_pet_foster_care care ON sale.source_id = care.id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m' ) &lt;= #{date}
+        AND care.deleted = 0
+        AND sale.type = 2
+        AND sale.source = 2
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) UNION ALL
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) AS date,
+        sum( sale.money ) AS quota,
+        'M' AS type
+        FROM
+        pw_pet_sales sale
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m' ) &lt;= #{date}
+        AND sale.type = 2
+        AND sale.source = 3
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) UNION ALL
+        SELECT
+        t.date,
+        sum( t.quota ) AS quota,
+        t.type
+        FROM
+        (
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) AS date,
+        sale.money - t.money AS quota,
+        'S' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN ( SELECT source_id, money FROM pw_pet_sales temp WHERE temp.type = 1 AND temp.source = 1 ) AS t ON sale.source_id = t.source_id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m' ) &lt;= #{date}
+        AND sale.type = 2
+        AND sale.source = 1
+        ) AS t
+        GROUP BY
+        t.date
+
+    </select>
+    <select id="productOfView" resultType="com.boot.store.dto.statistics.ProductSaleDataDto">
+        SELECT
+        t.NAME as name,
+        t.typeId,
+        sum( t.momey ) AS quota
+        FROM
+        (
+        SELECT
+        type.NAME,
+        type.id AS typeId,
+        ( sale.quota - sale.purchase_quota ) * sale.count AS momey,
+        DATE_FORMAT ( sale.create_time, '%Y-%m-%d' ) AS createTime
+        FROM
+        pw_commodity_type type
+        LEFT JOIN pw_commodity c ON type.id = c.commodity_type_id
+        LEFT JOIN pw_purchase_sales sale ON c.id = sale.commodity_id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{endDate}
+        ) AS t
+        GROUP BY
+        t.typeId
+    </select>
+    <select id="petOfView" resultType="com.boot.store.dto.statistics.PetSaleTypeDataDto">
+        SELECT
+        sum( t.quota ) AS quota,
+        t.type
+        FROM
+        (
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sum( sale.money ) AS quota,
+        'J' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN pw_pet_foster_care care ON sale.source_id = care.id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' )  &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{endDate}
+        AND care.deleted = 0
+        AND sale.type = 2
+        AND sale.source = 2
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) UNION ALL
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sum( sale.money ) AS quota,
+        'M' AS type
+        FROM
+        pw_pet_sales sale
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{endDate}
+        AND sale.type = 2
+        AND sale.source = 3
+        GROUP BY
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) UNION ALL
+        SELECT
+        t.date,
+        sum( t.quota ) AS quota,
+        t.type
+        FROM
+        (
+        SELECT
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) AS date,
+        sale.money - t.money AS quota,
+        'S' AS type
+        FROM
+        pw_pet_sales sale
+        LEFT JOIN ( SELECT source_id, money FROM pw_pet_sales temp WHERE temp.type = 1 AND temp.source = 1 ) AS t ON sale.source_id = t.source_id
+        WHERE
+        DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &gt;= #{startDate}
+        AND DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) &lt;= #{endDate}
+        AND sale.type = 2
+        AND sale.source = 1
+        ) AS t
+        GROUP BY
+        t.date
+        ) AS t
+        GROUP BY
+        t.type
+    </select>
+    <select id="sellCount" resultType="com.boot.store.controller.console.SellCountDto">
+        SELECT
+            sum( sale.count ) AS productCount,
+            'PRODUCT' AS type
+        FROM
+            pw_purchase_sales sale
+        WHERE
+            DATE_FORMAT( sale.create_time, '%Y-%m-%d' ) = #{date} UNION ALL
+        SELECT
+            count( id ) AS petCount,
+            'PET' AS type
+        FROM
+            pw_pet
+        WHERE
+            `status` = 1
+            AND deleted = 0 UNION ALL
+        SELECT
+            count( id ) AS fosterCareCount,
+            'CARE' AS type
+        FROM
+            pw_pet_foster_care
+        WHERE
+            `status` = 2
+        AND deleted = 0
+    </select>
+</mapper>
