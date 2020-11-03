@@ -1,9 +1,9 @@
 package com.boot.store.config;
 
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -16,7 +16,7 @@ public class DBTxConfig {
 	@Autowired
 	private DataSourceTransactionManager transactionManager;
 
-	@Value("${reproduction}")
+	@NacosValue(value = "${reproduction:false}", autoRefreshed = true)
 	private Boolean isReproduction;
 
 	@Bean(name = "txAdvice")

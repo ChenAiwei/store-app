@@ -21,7 +21,7 @@ public class MysqlGenerator {
 		GlobalConfig gc = new GlobalConfig();
 		gc.setOutputDir(projectPath + "/mybatisplus/src/main/java")
 				.setActiveRecord(true)// 是否支持 AR
-				.setAuthor("eagle") //设置作者名字
+				.setAuthor("auto") //设置作者名字
 				.setFileOverride(true) //文件覆盖(全新文件)
 				.setIdType(IdType.AUTO)//主键策略
 				.setBaseResultMap(true) //SQL 映射文件
@@ -87,6 +87,6 @@ public class MysqlGenerator {
 	}
 
 	public static void main(String[] args) {
-		Generator(new String[]{"sys_log"});
+		Generator(new String[]{"pw_shop_setting"});
 	}
 }

@@ -77,7 +77,7 @@ public class DruidConfig {
     @Value("${spring.datasource.druid.mysql.filters}")
     private String filters;
 
-    @Value("{spring.datasource.druid.mysql.connectionProperties}")
+    @Value("${spring.datasource.druid.mysql.connectionProperties}")
     private String connectionProperties;
 
     @Bean // 声明其为Bean实例
@@ -109,7 +109,6 @@ public class DruidConfig {
             log.error("druid configuration initialization filter");
         }
         datasource.setConnectionProperties(connectionProperties);
-
         return datasource;
     }
 

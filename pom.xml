@@ -22,6 +22,8 @@
         <google-code-gson.version>2.7</google-code-gson.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <hutool.version>5.3.8</hutool.version>
+        <nacos.version>0.2.7</nacos.version>
+        <jasypt.version>2.1.1</jasypt.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -107,6 +109,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>${nacos.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+            <version>${nacos.version}</version>
         </dependency>
     </dependencies>
 
