@@ -58,9 +58,10 @@ public interface ITUserService extends IService<TUser> {
 	 * @param startTime
 	 * @param endTime
 	 * @param userName
+	 * @param roleId
 	 * @return
 	 */
-	PageVo<UserVo> listUser(Integer page, Integer limit, String startTime, String endTime, String userName);
+	PageVo<UserVo> listUser(Integer page, Integer limit, String startTime, String endTime, String userName,String roleId);
 
 	/**
 	 * web根据id返回编辑的用户信息

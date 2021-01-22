@@ -1,7 +1,9 @@
 package com.boot.store.vo.user;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -12,11 +14,14 @@ import java.io.Serializable;
  */
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserVo implements Serializable {
 	private String id;
 	private String userName;
 	private String nickName;
 	private String role;
+	private String roleId;
 	private Integer status;
 	private String email;
 	private String mobile;

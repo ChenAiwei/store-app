@@ -27,6 +27,9 @@
         left join t_user tu on tur.user_id = tu.uid
         left join t_role tr on tur.role_id = tr.uid
         WHERE 1=1
+        <if test="roleId != null and roleId != '' ">
+            AND tur.role_id = #{roleId}
+        </if>
         <if test="uidLists != null and uidLists.size() > 0">
             AND tur.user_id IN
             <foreach collection="uidLists" index="index" item="uid" open="(" separator="," close=")">

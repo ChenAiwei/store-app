@@ -85,6 +85,11 @@ public class CategoryMenuDto implements Serializable {
 	 */
 	private Integer menuType;
 
+	/**
+	 * 菜单等级
+	 */
+	private String menuLevel;
+
 	@JsonProperty(value = "children")
 	private List<CategoryMenuDto> childMenuList;
 

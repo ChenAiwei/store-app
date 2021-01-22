@@ -63,9 +63,10 @@ public interface ITRoleService extends IService<TRole> {
 	/**
 	 * 用户ID 查询角色名字
 	 * @param uidLists
+	 * @param roleId
 	 * @return
 	 */
-	Map<String, RoleNameDto> getNameByUserIdList(List<String> uidLists);
+	Map<String, RoleNameDto> getNameByUserIdList(List<String> uidLists, String roleId);
 
 	/**
 	 * 条件查找角色

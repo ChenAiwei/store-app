@@ -8,6 +8,7 @@ import com.boot.store.dto.auth.ValidationGroups;
 import com.boot.store.entity.TRole;
 import com.boot.store.entity.TUserRole;
 import com.boot.store.enums.LogEnum;
+import com.boot.store.exception.ServiceException;
 import com.boot.store.service.system.ITCategoryMenuService;
 import com.boot.store.service.system.ITRoleService;
 import com.boot.store.service.system.ITUserRoleService;

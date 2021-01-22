@@ -31,5 +31,78 @@
     <sql id="Base_Column_List">
         uid, user_name, pass_word, nick_name, gender, avatar, email, birthday, mobile, login_count, last_login_time, last_login_ip, status, uuid, qq_number, we_chat, comment_status, browser, os, create_time, update_time
     </sql>
+    <select id="listUser" resultType="com.boot.store.vo.user.UserVo">
+        SELECT
+            tu.uid as id,
+            tu.user_name as userName,
+            tu.nick_name as nickName,
+            tu.`status` as status,
+            tu.email as email,
+            tu.mobile as mobile,
+            tu.uuid as uuid,
+            tu.login_count as loginCount,
+            tu.last_login_time as lastLoginTime,
+            tu.last_login_ip as lastLoginIp,
+            tu.create_time as createTime,
+            GROUP_CONCAT( tr.role_name ) AS role,
+            GROUP_CONCAT( tr.uid ) AS roleId
+        FROM
+            t_user tu
+            LEFT JOIN t_user_role tur ON tu.uid = tur.user_id
+            LEFT JOIN t_role tr ON tur.role_id = tr.uid
+        WHERE 1 = 1
+        <if test="startTime != null and startTime != ''">
+            and tu.create_time &gt;= #{startTime}
+        </if>
+        <if test="endTime != null and endTime != ''">
+            and tu.create_time &lt;= #{endTime}
+        </if>
+        <if test="userName != null and userName != ''">
+            and tu.user_name = #{userName}
+        </if>
+        <if test="roleId != null and roleId != ''">
+            and tr.uid = #{roleId}
+        </if>
+        GROUP BY
+            tu.uid
+        LIMIT #{page},#{limit}
+    </select>
+    <select id="listUserCount" resultType="java.lang.Long">
+        SELECT COUNT(temp.id) FROM(
+        SELECT
+        tu.uid as id,
+        tu.user_name as userName,
+        tu.nick_name as nickName,
+        tu.`status` as status,
+        tu.email as email,
+        tu.mobile as mobile,
+        tu.uuid as uuid,
+        tu.login_count as loginCount,
+        tu.last_login_time as lastLoginTime,
+        tu.last_login_ip as lastLoginIp,
+        tu.create_time as createTime,
+        GROUP_CONCAT( tr.role_name ) AS role,
+        GROUP_CONCAT( tr.uid ) AS roleId
+        FROM
+        t_user tu
+        LEFT JOIN t_user_role tur ON tu.uid = tur.user_id
+        LEFT JOIN t_role tr ON tur.role_id = tr.uid
+        WHERE 1 = 1
+            <if test="startTime != null and startTime != ''">and tu.create_time &gt;= #{startTime}
+            </if>
+            <if test="
+        endTime != null and endTime != ''">
+                and tu.create_time &lt;= #{endTime}
+            </if>
+            <if test="userName != null and userName != ''">
+                and tu.user_name = #{userName}
+            </if>
+            <if test="roleId != null and roleId != ''">
+                and tr.uid = #{roleId}
+            </if>
+            GROUP BY
+            tu.uid
+        ) AS temp
+    </select>
 
 </mapper>

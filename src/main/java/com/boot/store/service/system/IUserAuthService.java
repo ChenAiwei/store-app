@@ -20,6 +20,13 @@ public interface IUserAuthService {
 	List<UserAuthDto> info(String uid);
 
 	/**
+	 * uid 获取用户所有的菜单等级
+	 * @param uid
+	 * @return
+	 */
+	List<String> menuLevelList(String uid);
+
+	/**
 	 * 系统的所有权限Tree结构
 	 * @return
 	 */

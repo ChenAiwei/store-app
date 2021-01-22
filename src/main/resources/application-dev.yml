@@ -3,3 +3,5 @@ server:
 nacos:
   discovery:
     server-addr: 47.115.166.117:8848
+  config:
+    server-addr: 47.115.166.117:8848

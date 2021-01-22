@@ -100,8 +100,15 @@ public class TCategoryMenu extends Model<TCategoryMenu> {
     @TableField("menu_type")
     private Integer menuType;
 
+	/**
+	 * 菜单等级
+	 */
+	@TableField("menu_level")
+	private String menuLevel;
 
-    @Override
+
+
+	@Override
     protected Serializable pkVal() {
         return this.uid;
     }

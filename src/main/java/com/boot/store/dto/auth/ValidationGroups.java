@@ -8,4 +8,5 @@ package com.boot.store.dto.auth;
 public class ValidationGroups {
 	public interface Register{}
 	public interface Editer{}
+	public interface LoginV1{}
 }

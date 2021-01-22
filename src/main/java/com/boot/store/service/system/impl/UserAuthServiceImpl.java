@@ -61,6 +61,22 @@ public class UserAuthServiceImpl implements IUserAuthService {
 		return userAuthDtoList;
 	}
 
+	@Override
+	public List<String> menuLevelList(String uid) {
+		List<UserRoleDto> userRoleDtos = userAuthCustomMapper.userRole(uid);
+		UserRoleDto userRoleDto = userRoleDtos.get(0);
+		List<TCategoryMenu> tCategoryMenus = new ArrayList<>();
+		if (null != userRoleDto){
+			userRoleDto.getRoleList().forEach(role ->{
+				String categoryMenuUids = role.getCategoryMenuUids();
+				if (StringUtils.isNotBlank(categoryMenuUids)){
+					tCategoryMenus.addAll(getMenuList(categoryMenuUids));
+				}
+			});
+		}
+		return tCategoryMenus.isEmpty()?new ArrayList<String>():tCategoryMenus.stream().filter(menu ->StringUtils.isNotBlank(menu.getMenuLevel())).map(m ->m.getMenuLevel()).distinct().collect(Collectors.toList());
+	}
+
 	/**
 	 * 角色赋值
 	 * @param roleList

@@ -3,6 +3,7 @@ package com.boot.store.dto.auth;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @Author：chenaiwei

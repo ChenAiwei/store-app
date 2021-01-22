@@ -46,7 +46,7 @@ public class PermissionFilter implements Filter {
 	private ITUserService userService;
 
 	private static final Set<String> ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
-			Arrays.asList("/verify/getCode/blend", "/verify/getCode/number","/login", "/logout", "/register")));
+			Arrays.asList("/verify/getCode/blend", "/verify/getCode/number","/login","/login/v2", "/logout", "/register")));
     private static final String WEBSOCKET_TAG ="/websocket";
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {}

@@ -107,9 +107,9 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		user.setMobile(userVo.getPhone());
 		user.setEmail(userVo.getEmail());
 		user.setPassWord(MD5Util.getEncryptedPwd(userVo.getPassword()));
-		user.setBirthday(DateUtil.parseDate(userVo.getBirthday()));
-		user.setStatus(userVo.getStatus().equals("0")?false:true);
-		user.setGender(Integer.valueOf(userVo.getSex()));
+		user.setBirthday(StringUtils.isNotBlank(userVo.getBirthday())?DateUtil.parseDate(userVo.getBirthday()):null);
+		user.setStatus(userVo.getStatus());
+		user.setGender(userVo.getSex());
 		return user;
 	}
 
@@ -138,38 +138,15 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 	}
 
 	@Override
-	public PageVo<UserVo> listUser(Integer page, Integer limit, String startTime, String endTime, String userName) {
-		List<UserVo> userVoList = new ArrayList<>();
-		QueryWrapper<TUser> queryWrapper = new QueryWrapper<TUser>().orderByDesc("create_time");
-		if (StringUtils.isNotEmpty(startTime)){
-			queryWrapper.ge("create_time",startTime);
+	public PageVo<UserVo> listUser(Integer page, Integer limit, String startTime, String endTime, String userName,String roleId) {
+		if (page == 1){
+			page = 0;
+		}else{
+			page = limit * (page -1);
 		}
-		if (StringUtils.isNotEmpty(endTime)){
-			queryWrapper.le("create_time",endTime);
-		}
-		if (StringUtils.isNotEmpty(userName)){
-			queryWrapper.eq("user_name",userName);
-		}
-		IPage<TUser> resultPage = this.page(new Page<>(page,limit),queryWrapper);
-		List<String> uidLists = resultPage.getRecords().stream().map(u -> u.getUid()).collect(Collectors.toList());
-		Map<String,RoleNameDto> roleNameMap= userRoleService.getRoleService().getNameByUserIdList(uidLists);
-		resultPage.getRecords().forEach(user ->{
-			UserVo userVo = UserVo.builder().id(user.getUid())
-					.userName(user.getUserName())
-					.nickName(user.getNickName())
-					.role(roleNameMap.get(user.getUid())!=null?roleNameMap.get(user.getUid()).getRoleName():null)
-					.status(user.getStatus()?1:0)
-					.email(user.getEmail())
-					.mobile(user.getMobile())
-					.uuid(user.getUuid())
-					.loginCount(user.getLoginCount())
-					.lastLoginTime(DateUtil.formatDateTime(user.getLastLoginTime()))
-					.lastLoginIp(user.getLastLoginIp())
-					.createTime(DateUtil.formatDateTime(user.getCreateTime()))
-					.build();
-			userVoList.add(userVo);
-		});
-		return new PageVo<>(resultPage.getTotal(),userVoList);
+		List<UserVo> userVoList = this.baseMapper.listUser(page,limit,startTime,endTime,userName,roleId);
+		Long count = this.baseMapper.listUserCount(startTime,endTime,userName,roleId);
+		return new PageVo<>(count,userVoList);
 	}
 
 	@Override
@@ -185,8 +162,8 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 		userEditVo.setNickName(user.getNickName());
 		userEditVo.setPassword("");
 		userEditVo.setPhone(user.getMobile());
-		userEditVo.setSex(String.valueOf(user.getGender()));
-		userEditVo.setStatus(user.getStatus()?"1":"0");
+		userEditVo.setSex(user.getGender());
+		userEditVo.setStatus(user.getStatus());
 		userEditVo.setUserName(user.getUserName());
 		List<RoleNameInfoVo> roleList = new ArrayList<>();
 		List<TRole> tRoleList = userRoleService.getRoleService().list(new QueryWrapper<>());

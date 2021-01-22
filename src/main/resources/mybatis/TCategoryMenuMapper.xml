@@ -17,11 +17,12 @@
         <result column="update_time" property="updateTime" />
         <result column="is_show" property="isShow" />
         <result column="menu_type" property="menuType" />
+        <result column="menu_level" property="menuLevel" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        uid, name, menu_level, summary, parent_uid, url, icon, sort, status, create_time, update_time, is_show, menu_type
+        uid, name, menu_level, summary, parent_uid, url, icon, sort, status, create_time, update_time, is_show, menu_type,menu_level
     </sql>
 
 </mapper>

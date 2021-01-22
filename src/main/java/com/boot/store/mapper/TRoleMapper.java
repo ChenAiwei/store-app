@@ -20,5 +20,5 @@ import java.util.Map;
 public interface TRoleMapper extends BaseMapper<TRole> {
 
 	@MapKey("userId")
-	Map<String, RoleNameDto> getNameByUserIdList(@Param("uidLists") List<String> uidLists);
+	Map<String, RoleNameDto> getNameByUserIdList(@Param("uidLists") List<String> uidLists, @Param("roleId") String roleId);
 }

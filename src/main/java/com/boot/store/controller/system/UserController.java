@@ -86,8 +86,8 @@ public class UserController {
 	}
 
 	@GetMapping("/listUser")
-	public ResultVo<PageVo<UserVo>> listUser(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit,  String startTime,  String endTime,  String userName){
-		PageVo<UserVo> userVoPageVo = userService.listUser(page, limit, startTime, endTime, userName);
+	public ResultVo<PageVo<UserVo>> listUser(@RequestParam(name = "page",defaultValue = "1") Integer page, @RequestParam (name = "limit",defaultValue = "20") Integer limit,  String startTime,  String endTime,  String userName,String roleId){
+		PageVo<UserVo> userVoPageVo = userService.listUser(page, limit, startTime, endTime, userName,roleId);
 		return ResultVoUtil.success(userVoPageVo);
 	}
 
