@@ -15,9 +15,9 @@ spring:
     druid:
       mysql:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/store?characterEncoding=utf-8&useSSL=false&useUnicode=true&serverTimezone=GMT%2B8
+        url: ENC(zN4Pjq4k6JDDtWIGwmW2LTunF7UVi8k/1tfZtbHJ/+/LmtcFMEa3Qw2CJxGBM45EbysTevOYHiUl3pVSNsOTyEer8k9hWv2mHAQ7aJCtzWZXuyJWnceFiRWDdy7M+Eo3OBt3HGmASfdHSzWaDJk0diHkZLhVMwdIzFTpcUh4w2s=)
         username: ENC(NMIVZzYm21J8597NHqG8zQ==)
-        password:
+        password: ENC(t+8nGyvl793gF68+ooR+/A==)
         initialSize: 20
         minIdle: 5
         maxActive: 200
