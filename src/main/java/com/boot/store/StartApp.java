@@ -1,15 +1,14 @@
 package com.boot.store;
 
 import com.alibaba.nacos.api.annotation.NacosInjected;
+import com.alibaba.nacos.api.config.ConfigType;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
-import com.alibaba.nacos.spring.context.annotation.discovery.EnableNacosDiscovery;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -26,7 +25,7 @@ import java.net.UnknownHostException;
 @SpringBootApplication
 @EnableCaching
 @EnableScheduling
-@NacosPropertySource(dataId = "${spring.application.name}", autoRefreshed = true)
+@NacosPropertySource(dataId = "${spring.application.name}-${spring.profiles.active}.properties",type = ConfigType.PROPERTIES,groupId = "${spring.profiles.active}",autoRefreshed = true)
 @Slf4j
 public class StartApp {
 	@NacosInjected
