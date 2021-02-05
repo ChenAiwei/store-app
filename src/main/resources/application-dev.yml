@@ -3,6 +3,7 @@ server:
 nacos:
   discovery:
     server-addr: 47.115.166.117:8848
+    namespace: b2fcfbce-0a9b-480b-ba20-a0e58bf4ce3e
   config:
     server-addr: 47.115.166.117:8848
     namespace: b2fcfbce-0a9b-480b-ba20-a0e58bf4ce3e
